@@ -1,15 +1,14 @@
-require 'formula'
-
 class CoinDataSample < Formula
-  homepage 'http://www.coin-or.org/download/pkgsource/Data'
-  url 'http://www.coin-or.org/download/pkgsource/Data/Sample-1.1.0.tgz'
-  sha1 'd1a029025dec178b99ed8b592742a7cade3c72d8'
+  desc "Sample models"
+  homepage "http://www.coin-or.org/download/pkgsource/Data"
+  url "http://www.coin-or.org/download/pkgsource/Data/Sample-1.2.10.tgz"
+  sha256 "ff80d1b9d28b87adf2e4b5e9897ff85a95a5b66eabd08cca8add871b2f6079b5"
 
   def install
-    system './configure', '--disable-debug',
-                          '--disable-dependency-tracking',
-                          '--disable-silent-rules',
-                          "--prefix=#{prefix}"
-    system 'make', 'install'
+    system "./configure", "--disable-debug",
+           "--disable-dependency-tracking",
+           "--disable-silent-rules",
+           "--prefix=#{prefix}"
+    system "make", "install"
   end
 end
