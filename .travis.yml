@@ -1,0 +1,16 @@
+language: objective-c  # We're on OSX, with Homebrew.
+
+install:
+  - unset DYLD_LIBRARY_PATH
+  - brew update
+  - brew tap homebrew/science
+  # Install homebrew-coinor as tap.
+  - mkdir -p $(brew --repo)/Library/Taps/travis
+  - ln -s $PWD $(brew --repo)/Library/Taps/travis/travis-testtap
+  - brew tap --repair
+
+script:
+  - bash $TRAVIS_BUILD_DIR/travis_ci/travis.sh
+
+notifications:
+    email: false

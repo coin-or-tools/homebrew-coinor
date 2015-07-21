@@ -1,15 +1,14 @@
-require 'formula'
-
 class CoinDataMiplib3 < Formula
-  homepage 'http://www.coin-or.org/download/pkgsource/Data'
-  url 'http://www.coin-or.org/download/source/Data/miplib3-1.2.6.tgz'
-  sha1 'b02d0832046e6d1d04fc87d93c430a33dae0a1bd'
+  desc "MIPLib models"
+  homepage "http://www.coin-or.org/download/pkgsource/Data"
+  url "http://www.coin-or.org/download/source/Data/miplib3-1.2.6.tgz"
+  sha256 "43449c8e9652af80a29044c31da51e9f600f28b211676ba8aa8b42bf8b31dee5"
 
   def install
-    system './configure', '--disable-debug',
-                          '--disable-dependency-tracking',
-                          '--disable-silent-rules',
-                          "--prefix=#{prefix}"
-    system 'make', 'install'
+    system "./configure", "--disable-debug",
+           "--disable-dependency-tracking",
+           "--disable-silent-rules",
+           "--prefix=#{prefix}"
+    system "make", "install"
   end
 end
