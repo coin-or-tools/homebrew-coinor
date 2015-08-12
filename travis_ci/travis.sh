@@ -53,7 +53,7 @@ do
     # Dump output of building dependencies to log file
     # brew reinstall $(brew deps $file) #>> $BUILD_OUTPUT 2>&1
     # Explicitly print the verbose output of test-bot
-    brew test-bot $file --skip-setup # -v
+    brew test-bot $file --skip-setup -v
 done
 
 # The build was successful dump the output
