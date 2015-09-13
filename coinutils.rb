@@ -1,8 +1,8 @@
 class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
   homepage "http://www.coin-or.org/projects/CoinUtils.xml"
-  url "http://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.9.19.tgz"
-  sha256 "61024f2e2a73021b6c20e54f7d1def9c4ab8da1d53a6b8b09da9de889da63036"
+  url "http://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.10.10.tgz"
+  sha256 "bedace82a76d4644efabb3a0bce03d5f00933a8500dbff084a7b7791aeb91561"
 
   depends_on :fortran
 
@@ -10,6 +10,7 @@ class Coinutils < Formula
   depends_on "coin_data_netlib"
 
   depends_on "graphviz" => :build  # For documentation.
+  depends_on "pkg-config" => :build
 
   depends_on "homebrew/science/glpk" => :optional
   depends_on "homebrew/science/openblas" => :optional
