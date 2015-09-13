@@ -5,19 +5,17 @@ class Clp < Formula
   sha256 "05e8537c334d086b945389ea42a17ee70e4c192d1ff67ac6ab38817ace24b207"
   head "https://projects.coin-or.org/svn/Clp/trunk"
 
-  depends_on "osi"
-
-  depends_on "doxygen"
-
-  depends_on "graphviz" => :build # For documentation.
-  depends_on "pkg-config" => :build
-
   depends_on "homebrew/science/asl" => :optional
   depends_on "homebrew/science/glpk" => :optional
   depends_on "homebrew/science/openblas" => :optional
 
-  depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + ((build.with? "openblas") ? ["with-openblas"] : [])
-  depends_on "homebrew/science/suite-sparse" => [:optional] + ((build.with? "openblas") ? ["with-openblas"] : [])
+  glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
+  openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
+
+  depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
+  depends_on "homebrew/science/suite-sparse" => [:optional] + openblas_dep
+
+  depends_on "osi" => (glpk_dep + openblas_dep)
 
   depends_on :fortran
 
@@ -37,25 +35,11 @@ class Clp < Formula
       args << "--with-asl-lib=-L#{Formula["asl"].opt_lib} -lasl"
     end
 
-    if build.with? "glpk"
-      args << "--with-glpk-lib=-L#{Formula["glpk"].opt_lib} -lglpk"
-      args << "--with-glpk-incdir=#{Formula["glpk"].opt_include}"
-    end
-
     if build.with? "mumps"
       mumps_libs = %w[-ldmumps -lmumps_common -lpord -lmpiseq]
       mumps_libcmd = "-L#{Formula["mumps"].opt_lib} " + mumps_libs.join(" ")
       args << "--with-mumps-incdir=#{Formula["mumps"].opt_libexec}/include"
       args << "--with-mumps-lib=#{mumps_libcmd}"
-    end
-
-    if build.with? "openblas"
-      openblaslib = "-L#{Formula["openblas"].opt_lib} -lopenblas"
-      openblasinc = "#{Formula["openblas"].opt_include}"
-      args << "--with-blas-lib=#{openblaslib}"
-      args << "--with-blas-incdir=#{openblasinc}"
-      args << "--with-lapack-lib=#{openblaslib}"
-      args << "--with-lapack-incdir=#{openblasinc}"
     end
 
     if build.with? "suite-sparse"
