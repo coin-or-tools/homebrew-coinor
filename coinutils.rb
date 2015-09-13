@@ -9,6 +9,7 @@ class Coinutils < Formula
   depends_on "coin_data_sample"
   depends_on "coin_data_netlib"
 
+  depends_on "doxygen"
   depends_on "graphviz" => :build  # For documentation.
   depends_on "pkg-config" => :build
 
