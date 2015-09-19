@@ -5,8 +5,8 @@ install:
   - brew update
   - brew tap homebrew/science
   # Install homebrew-coinor as tap.
-  - mkdir -p $(brew --repo)/Library/Taps/travis
-  - ln -s $PWD $(brew --repo)/Library/Taps/travis/travis-testtap
+  - mkdir -p $(brew --repo)/Library/Taps/coin-or-tools
+  - ln -s $PWD $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor
   - brew tap --repair
 
 script:
