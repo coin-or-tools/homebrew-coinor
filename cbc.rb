@@ -20,7 +20,7 @@ class Cbc < Formula
   suite_sparse_dep = (build.with? "suite-sparse") ? ["with-openblas"] : []
 
   depends_on "clp" => (asl_dep + glpk_dep + openblas_dep + mumps_dep + suite_sparse_dep)
-  depends_on "cgl" 
+  depends_on "cgl"
   depends_on :fortran
 
   def install
