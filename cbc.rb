@@ -1,5 +1,5 @@
 class Cbc < Formula
-  desc "Linear programming solver"
+  desc "Mixed integer linear programming solver"
   homepage "https://projects.coin-or.org/Cbc"
   url "http://www.coin-or.org/download/pkgsource/Cbc/Cbc-2.9.6.tgz"
   sha256 "b32c338465222594786de22943b7d124481f51a7642876809695e2ad1250f4f2"
