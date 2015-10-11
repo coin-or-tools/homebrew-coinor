@@ -1,8 +1,8 @@
-class SYMPHONY < Formula
+class Symphony < Formula
   desc "Framework for solving mixed integer linear programs"
   homepage "https://projects.coin-or.org/SYMPHONY"
   url "http://www.coin-or.org/download/pkgsource/SYMPHONY/SYMPHONY-5.6.13.tgz"
-  sha256 "b32c338465222594786de22943b7d124481f51a7642876809695e2ad1250f4f2"
+  sha256 "62353422dae24c24fe02b41ba9ffeecbcda2940b68cf477c2867df0aebaa6812"
   head "https://projects.coin-or.org/svn/SYMPHONY/trunk"
 
   depends_on "homebrew/science/asl" => :optional
