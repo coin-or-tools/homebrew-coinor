@@ -16,8 +16,8 @@ class Cbc < Formula
   depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
   depends_on "homebrew/science/suite-sparse" => [:optional] + openblas_dep
 
-  mumps_dep = (build.with? "mumps") ? ["with-openblas"] : []
-  suite_sparse_dep = (build.with? "suite-sparse") ? ["with-openblas"] : []
+  mumps_dep = (build.with? "mumps") ? ["with-mumps"] : []
+  suite_sparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
 
   depends_on "clp" => (asl_dep + glpk_dep + openblas_dep + mumps_dep + suite_sparse_dep)
   depends_on "cgl"
