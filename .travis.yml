@@ -1,16 +1,57 @@
-language: objective-c  # We're on OSX, with Homebrew.
+language: ruby
+rvm: system
+sudo: required
+services: docker
+os: linux
 
-install:
-  - unset DYLD_LIBRARY_PATH
-  - brew update
-  - brew tap homebrew/science
-  # Install homebrew-coinor as tap.
-  - mkdir -p $(brew --repo)/Library/Taps/coin-or-tools
-  - ln -s $PWD $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor
-  - brew tap --repair
+matrix:
+  include:
+    - env: OSX=10.11
+      os: osx
+      osx_image: osx10.11
+      rvm: system
+    - env: OSX=10.10
+      os: osx
+      osx_image: xcode7
+      rvm: system
+    - env: OSX=10.9
+      os: osx
+      osx_image: beta-xcode6.2
+      rvm: system
+  allow_failures:
+    - os: linux
+
+before_install:
+  - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
+  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
+      sudo chown -R $USER $(brew --repo);
+      brew tap homebrew/python;
+      brew update;
+      ln -s $PWD $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor;
+      cd $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor;
+      export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
+    fi
+  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
+      docker pull sjackman/linuxbrew-standalone;
+      docker run
+        -v $(pwd):/home/linuxbrew/homebrew-coinor
+        sjackman/linuxbrew-standalone
+        /bin/sh -c 'brew tap homebrew/python && brew update && mkdir -p $(brew --repo)/Library/Taps/coin-or-tools && cp -rf ~/homebrew-coinor $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor';
+      docker commit $(docker ps -l -q) linuxbrew;
+    fi
+  - env | grep TRAVIS | tee /tmp/travis.env
 
 script:
-  - bash $TRAVIS_BUILD_DIR/travis_ci/travis.sh
+  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
+      brew test-bot --tap=coin-or-tools/coinor;
+    else
+      docker run
+        -w /home/linuxbrew/.linuxbrew/Library/Taps/coin-or-tools/homebrew-coinor
+        --env-file /tmp/travis.env
+        -t
+        linuxbrew
+        brew test-bot --tap=coin-or-tools/coinor;
+    fi
 
 notifications:
-    email: false
+  email: never
