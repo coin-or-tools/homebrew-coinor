@@ -37,8 +37,8 @@ class Symphony < Formula
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
-	    "--enable-gnu-packages",
-	    "--with-application",
+            "--enable-gnu-packages",
+            "--with-application",
            ]
 
     if build.with? "readline"
