@@ -5,15 +5,15 @@ class Symphony < Formula
   sha256 "62353422dae24c24fe02b41ba9ffeecbcda2940b68cf477c2867df0aebaa6812"
   head "https://projects.coin-or.org/svn/SYMPHONY/trunk"
 
+  option "without-openmp", "Disable openmp support"
+  option "with-gmpl", "GNU Modeling Language support via GLPK"
+
   depends_on "homebrew/science/asl" => :optional
   depends_on "homebrew/science/glpk" => :optional
   depends_on "homebrew/science/openblas" => :optional
 
-  option "without-openmp", "Disable openmp support"
-
   asl_dep = (build.with? "asl") ? ["with-asl"] : []
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
-  option "with-gmpl", "GNU Modeling Language support via GLPK"
 
   depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
   depends_on "homebrew/science/suite-sparse" => [:optional] + openblas_dep
