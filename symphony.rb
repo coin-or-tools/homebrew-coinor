@@ -72,6 +72,6 @@ class Symphony < Formula
 
   test do
     system "#{bin}/symphony", "-F", "#{share}/symphony/Datasets/sample.mps"
-    system "#{bin}/symphony", "-F", "#{share}/symphony/Datasets/sample.mod", "-D", "#{share}/symphony/Datasets/sample.dat" if build.with? "gmpl"
+    system "#{bin}/symphony", "-F", "#{share}/symphony/Datasets/sample.mod", "-D", "#{pkgshare}/Datasets/sample.dat" if build.with? "gmpl"
   end
 end
