@@ -56,9 +56,7 @@ class Symphony < Formula
       args << "--with-gmpl"
     end
 
-    if build.without? "openmp"
-      args << "--disable-openmp"
-    end
+    args << "--disable-openmp" if build.without? "openmp"
 
     system "./configure", *args
 
