@@ -13,8 +13,10 @@ class Coinutils < Formula
   depends_on "graphviz" => :build  # For documentation.
   depends_on "pkg-config" => :build
 
-  depends_on "homebrew/science/glpk" => :optional
+  depends_on "homebrew/science/glpk448" => :optional
   depends_on "homebrew/science/openblas" => :optional
+
+  option "with-glpk", "Build with support for reading AMPL/GMPL models" 
 
   def install
     args = ["--disable-debug",
@@ -28,8 +30,8 @@ class Coinutils < Formula
            ]
 
     if build.with? "glpk"
-      args << "--with-glpk-lib=-L#{Formula["glpk"].opt_lib} -lglpk"
-      args << "--with-glpk-incdir=#{Formula["glpk"].opt_include}"
+      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
+      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
     end
 
     if build.with? "openblas"
