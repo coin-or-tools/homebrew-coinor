@@ -4,6 +4,8 @@ class Coinutils < Formula
   url "http://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.10.10.tgz"
   sha256 "bedace82a76d4644efabb3a0bce03d5f00933a8500dbff084a7b7791aeb91561"
 
+  option "with-glpk", "Build with support for reading AMPL/GMPL models" 
+
   depends_on :fortran
 
   depends_on "coin_data_sample"
@@ -13,10 +15,8 @@ class Coinutils < Formula
   depends_on "graphviz" => :build  # For documentation.
   depends_on "pkg-config" => :build
 
-  depends_on "homebrew/science/glpk448" => :optional
   depends_on "homebrew/science/openblas" => :optional
-
-  option "with-glpk", "Build with support for reading AMPL/GMPL models" 
+  depends_on "homebrew/science/glpk448" if build.with? "glpk"
 
   def install
     args = ["--disable-debug",
