@@ -5,8 +5,10 @@ class Osi < Formula
   sha256 "c578256853109e33a8ad8f1917ca8850a027d8a0987ef87166d34de1a256a57d"
   head "https://projects.coin-or.org/svn/Osi/trunk"
 
-  depends_on "homebrew/science/glpk" => :optional
+  option "with-glpk", "Build with interface to GLPK and support for reading AMPL/GMPL models" 
+
   depends_on "homebrew/science/openblas" => :optional
+  depends_on "homebrew/science/glpk448" if build.with? "glpk"
 
   glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
