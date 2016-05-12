@@ -29,11 +29,6 @@ class Coinutils < Formula
             "--with-dot",
            ]
 
-    if build.with? "glpk"
-      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
-      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
-    end
-
     if build.with? "openblas"
       openblaslib = "-L#{Formula["openblas"].opt_lib} -lopenblas"
       openblasinc = "#{Formula["openblas"].opt_include}"
@@ -41,6 +36,11 @@ class Coinutils < Formula
       args << "--with-blas-incdir=#{openblasinc}"
       args << "--with-lapack-lib=#{openblaslib}"
       args << "--with-lapack-incdir=#{openblasinc}"
+    end
+
+    if build.with? "glpk"
+      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
+      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
     end
 
     system "./configure", *args
