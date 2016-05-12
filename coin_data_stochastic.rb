@@ -1,8 +1,8 @@
 class CoinDataStochastic < Formula
   desc "Stochastic models"
   homepage "http://www.coin-or.org/download/pkgsource/Data"
-  url "http://www.coin-or.org/download/source/Data/Stochastic-1.1.5.tgz"
-  sha256 "65bbf7611ef6f3d41e76f3d1430f74a14097567d595b75b58f67b4b726ebb697"
+  url "http://www.coin-or.org/download/pkgsource/Data/Data-Stochastic-1.1.5.tgz"
+  sha256 "6fdfa29b51e5d27ce243a902ae98bca9924390484262a3df8e986476d51f4692"
 
   def install
     system "./configure", "--disable-debug",
