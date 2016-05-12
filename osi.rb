@@ -7,11 +7,11 @@ class Osi < Formula
 
   option "with-glpk", "Build with interface to GLPK and support for reading AMPL/GMPL models" 
 
-  depends_on "homebrew/science/openblas" => :optional
-  depends_on "homebrew/science/glpk448" if build.with? "glpk"
-
   glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
+
+  depends_on "homebrew/science/openblas" => :optional
+  depends_on "homebrew/science/glpk448" if build.with? "glpk"
 
   depends_on "coinutils" => (glpk_dep + openblas_dep)
 
@@ -25,6 +25,11 @@ class Osi < Formula
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
            ]
+
+    if build.with? "glpk"
+      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
+      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
+    end
 
     system "./configure", *args
 
