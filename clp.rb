@@ -18,6 +18,7 @@ class Clp < Formula
 
   depends_on "osi" => (glpk_dep + openblas_dep)
 
+  depends_on "readline" => :recommended
   depends_on :fortran
 
   def install
