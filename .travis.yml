@@ -42,6 +42,7 @@ before_install:
   - env | grep TRAVIS | tee /tmp/travis.env
 
 script:
+  - export HOMEBREW_DEVELOPER=1
   - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
       brew test-bot --tap=coin-or-tools/coinor;
     else
