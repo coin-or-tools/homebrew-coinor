@@ -18,15 +18,13 @@ class Symphony < Formula
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
   suitesparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
 
-  depends_on "homebrew/science/openblas" => :optional
   depends_on "homebrew/science/glpk448" if build.with? "glpk"
-  depends_on "homebrew/science/asl" => :optional
-  depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
-  depends_on "homebrew/science/suite-sparse" => [:optional] + openblas_dep
   depends_on "readline" => :recommended
   depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
   depends_on "cgl"
   depends_on :fortran
+
+  needs :openmp if build.with? "openmp"
 
   def install
     args = ["--disable-debug",
@@ -49,7 +47,6 @@ class Symphony < Formula
     if build.with? "glpk"
       args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
       args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
-      ENV.append "CPPFLAGS", "-I#{Formula["mysql"].opt_include}/mysql"
       args << "--with-gmpl"
     end
 
