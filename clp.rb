@@ -14,7 +14,7 @@ class Clp < Formula
   depends_on "homebrew/science/glpk448" if build.with? "glpk"
   depends_on "homebrew/science/asl" => :optional
   depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
-  depends_on "homebrew/science/suite-sparse" => [:optional] + openblas_dep
+  depends_on "homebrew/science/suite-sparse" => [(build.with? "glpk") ? :run : :optional] + openblas_dep
 
   depends_on "osi" => (glpk_dep + openblas_dep)
 
@@ -29,12 +29,11 @@ class Clp < Formula
             "--includedir=#{include}/clp",
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
-            "--with-dot",
-           ]
+            "--with-dot"]
 
     if build.with? "openblas"
       openblaslib = "-L#{Formula["openblas"].opt_lib} -lopenblas"
-      openblasinc = "#{Formula["openblas"].opt_include}"
+      openblasinc = Formula["openblas"].opt_include.to_s
       args << "--with-blas-lib=#{openblaslib}"
       args << "--with-blas-incdir=#{openblasinc}"
       args << "--with-lapack-lib=#{openblaslib}"
