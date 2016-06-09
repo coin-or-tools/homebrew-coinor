@@ -5,18 +5,20 @@ class Clp < Formula
   sha256 "05e8537c334d086b945389ea42a17ee70e4c192d1ff67ac6ab38817ace24b207"
   head "https://projects.coin-or.org/svn/Clp/trunk"
 
-  depends_on "homebrew/science/asl" => :optional
-  depends_on "homebrew/science/glpk" => :optional
-  depends_on "homebrew/science/openblas" => :optional
+  option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
   glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
 
+  depends_on "homebrew/science/openblas" => :optional
+  depends_on "homebrew/science/glpk448" if build.with? "glpk"
+  depends_on "homebrew/science/asl" => :optional
   depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
   depends_on "homebrew/science/suite-sparse" => [:optional] + openblas_dep
 
   depends_on "osi" => (glpk_dep + openblas_dep)
 
+  depends_on "readline" => :recommended
   depends_on :fortran
 
   def install
@@ -29,6 +31,20 @@ class Clp < Formula
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
            ]
+
+    if build.with? "openblas"
+      openblaslib = "-L#{Formula["openblas"].opt_lib} -lopenblas"
+      openblasinc = "#{Formula["openblas"].opt_include}"
+      args << "--with-blas-lib=#{openblaslib}"
+      args << "--with-blas-incdir=#{openblasinc}"
+      args << "--with-lapack-lib=#{openblaslib}"
+      args << "--with-lapack-incdir=#{openblasinc}"
+    end
+
+    if build.with? "glpk"
+      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
+      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
+    end
 
     if build.with? "asl"
       args << "--with-asl-incdir=#{Formula["asl"].opt_include}/asl"
