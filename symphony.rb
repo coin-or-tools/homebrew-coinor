@@ -17,7 +17,7 @@ class Symphony < Formula
   mumps_dep = (build.with? "mumps") ? ["with-mumps"] : []
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
   suitesparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
-  
+
   depends_on "homebrew/science/openblas" => :optional
   depends_on "homebrew/science/glpk448" if build.with? "glpk"
   depends_on "homebrew/science/asl" => :optional
@@ -39,7 +39,7 @@ class Symphony < Formula
             "--with-dot",
             "--enable-gnu-packages",
             "--with-application",
-	    ]
+            ]
 
     if build.with? "readline"
       ENV.append "CXXFLAGS", "-I#{Formula["readline"].opt_include}"
@@ -68,7 +68,7 @@ class Symphony < Formula
   end
 
   test do
-    system "#{bin}/symphony", "-F", "#{share}/symphony/Datasets/sample.mps"
-    system "#{bin}/symphony", "-F", "#{share}/symphony/Datasets/sample.mod", "-D", "#{pkgshare}/Datasets/sample.dat" if build.with? "gmpl"
+    system "#{bin}/symphony", "-F", "#{pkgshare}/symphony/Datasets/sample.mps"
+    system "#{bin}/symphony", "-F", "#{pkgshare}/symphony/Datasets/sample.mod", "-D", "#{pkgshare}/Datasets/sample.dat" if build.with? "gmpl"
   end
 end
