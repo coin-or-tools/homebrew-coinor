@@ -25,10 +25,12 @@ before_install:
   - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
   - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
       sudo chown -R $USER $(brew --repo);
-      brew tap homebrew/python;
-      brew update;
-      ln -s $PWD $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor;
-      cd $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor;
+      git -C "$(brew --repo)" reset --hard origin/master;
+      git -C "$(brew --repo)" clean -qxdff;
+      brew update || brew udpate;
+      mkdir -p "$(brew --repo)/Library/Taps/coin-or-tools";
+      ln -s "$TRAVIS_BUILD_DIR" "$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
+      cd "$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
       export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
     fi
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
@@ -40,6 +42,9 @@ before_install:
       docker commit $(docker ps -l -q) linuxbrew;
     fi
   - env | grep TRAVIS | tee /tmp/travis.env
+
+install:
+  - export HOMEBREW_DEVELOPER="1"
 
 script:
   - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
