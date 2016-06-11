@@ -19,6 +19,7 @@ class Clp < Formula
   ss_opts << :optional if build.without? "glpk"
   depends_on "homebrew/science/suite-sparse" => ss_opts
 
+  depends_on "coinutils"
   depends_on "osi" => (glpk_dep + openblas_dep)
 
   depends_on "readline" => :recommended
