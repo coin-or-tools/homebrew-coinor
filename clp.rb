@@ -20,7 +20,7 @@ class Clp < Formula
   depends_on "homebrew/science/suite-sparse" => ss_opts
 
   depends_on "coinutils"
-  depends_on "osi" => (glpk_dep + openblas_dep)
+  depends_on "osi" => :recommended
 
   depends_on "readline" => :recommended
   depends_on :fortran
