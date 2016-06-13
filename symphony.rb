@@ -24,8 +24,6 @@ class Symphony < Formula
   depends_on "cgl"
   depends_on :fortran
 
-  needs :openmp if build.with? "openmp"
-
   def install
     args = ["--disable-debug",
             "--disable-dependency-tracking",
