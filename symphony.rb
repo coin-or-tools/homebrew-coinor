@@ -20,6 +20,7 @@ class Symphony < Formula
 
   depends_on "homebrew/science/glpk448" if build.with? "glpk"
   depends_on "readline" => :recommended
+  depends_on "osi"
   depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
   depends_on "cgl"
   depends_on :fortran
