@@ -14,8 +14,12 @@ class Clp < Formula
   depends_on "homebrew/science/glpk448" if build.with? "glpk"
   depends_on "homebrew/science/asl" => :optional
   depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
-  depends_on "homebrew/science/suite-sparse" => [(build.with? "glpk") ? :run : :optional] + openblas_dep
 
+  ss_opts = openblas_dep
+  ss_opts << :optional if build.without? "glpk"
+  depends_on "homebrew/science/suite-sparse" => ss_opts
+
+  depends_on "coinutils"
   depends_on "osi" => (glpk_dep + openblas_dep)
 
   depends_on "readline" => :recommended
@@ -57,7 +61,7 @@ class Clp < Formula
       args << "--with-mumps-lib=#{mumps_libcmd}"
     end
 
-    if build.with? "suite-sparse"
+    if (build.with? "glpk") || (build.with? "suite-sparse")
       args << "--with-amd-incdir=#{Formula["suite-sparse"].opt_include}"
       args << "--with-amd-lib=-L#{Formula["suite-sparse"].opt_lib} -lamd"
       args << "--with-cholmod-incdir=#{Formula["suite-sparse"].opt_include}"
