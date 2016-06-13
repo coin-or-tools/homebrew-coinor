@@ -58,7 +58,7 @@ class Symphony < Formula
     system "make", "install"
 
     (pkgshare / "Datasets").install "Datasets/sample.mps"
-    (pkgshare / "Datasets").install "Datasets/sample.mod", "Datasets/sample.dat" if build.with? "gmpl"
+    (pkgshare / "Datasets").install "Datasets/sample.mod", "Datasets/sample.dat" if build.with? "glpk"
 
   end
 
