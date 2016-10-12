@@ -15,7 +15,7 @@ class Clp < Formula
   depends_on "homebrew/science/asl" => :optional
   depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
 
-  ss_opts = openblas_dep
+  ss_opts = openblas_dep.clone
   ss_opts << :optional if build.without? "glpk"
   depends_on "homebrew/science/suite-sparse" => ss_opts
 
