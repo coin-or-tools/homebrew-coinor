@@ -17,6 +17,7 @@ class Cgl < Formula
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
   suitesparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
 
+  depends_on "osi" => (glpk_dep + openblas_dep)
   depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
 
   def install
