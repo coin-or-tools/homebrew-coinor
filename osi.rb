@@ -14,7 +14,8 @@ class Osi < Formula
   depends_on "homebrew/science/glpk448" if build.with? "glpk"
 
   depends_on "coinutils" => (glpk_dep + openblas_dep)
-
+  depends_on "pkg-config" => :build
+  
   def install
     args = ["--disable-debug",
             "--disable-dependency-tracking",

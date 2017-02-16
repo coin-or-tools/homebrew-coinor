@@ -6,6 +6,7 @@ class Dylp < Formula
   head "https://projects.coin-or.org/svn/Dylp/trunk"
 
   depends_on "osi"
+  depends_on "pkg-config" => :build
 
   def install
     args = ["--disable-debug",

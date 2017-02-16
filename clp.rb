@@ -24,6 +24,7 @@ class Clp < Formula
 
   depends_on "readline" => :recommended
   depends_on :fortran
+  depends_on "pkg-config" => :build
 
   def install
     args = ["--disable-debug",

@@ -7,6 +7,7 @@ class Vol < Formula
 
   depends_on "coin_data_sample"
   depends_on "osi" => :recommended
+  depends_on "pkg-config" => :build
 
   def install
     args = ["--disable-debug",
