@@ -1,6 +1,6 @@
 class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
-  homepage "http://www.coin-or.org/projects/CoinUtils.xml"
+  homepage "https://projects.coin-or.org/CoinUtils"
   url "https://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.10.13.tgz"
   sha256 "e4ba7b7553d0a1f8136362e38e9e58a666f1e48770f72c5419db1f70a0dab0c9"
 
