@@ -1,62 +1,47 @@
 language: ruby
-rvm: system
 sudo: required
-services: docker
-os: linux
 
 matrix:
   include:
-    - env: OSX=10.11
-      os: osx
-      osx_image: osx10.11
-      rvm: system
-    - env: OSX=10.10
-      os: osx
-      osx_image: xcode7
-      rvm: system
-    - env: OSX=10.9
-      os: osx
-      osx_image: beta-xcode6.2
-      rvm: system
+    # - env: OSX=10.12
+    #   os: osx
+    #   osx_image: xcode9.2
+    #   rvm: system
+    # - env: OSX=10.11
+    #   os: osx
+    #   osx_image: xcode8
+    #   rvm: system
+    - os: linux
+      rvm: 2.3
   allow_failures:
     - os: linux
 
-before_install:
-  - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
-  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
-      sudo chown -R $USER $(brew --repo);
-      git -C "$(brew --repo)" reset --hard origin/master;
-      git -C "$(brew --repo)" clean -qxdff;
-      brew update || brew udpate;
-      mkdir -p "$(brew --repo)/Library/Taps/coin-or-tools";
-      ln -s "$TRAVIS_BUILD_DIR" "$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
-      cd "$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
-      export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor";
-    fi
-  - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
-      docker pull sjackman/linuxbrew-standalone;
-      docker run
-        -v $(pwd):/home/linuxbrew/homebrew-coinor
-        sjackman/linuxbrew-standalone
-        /bin/sh -c 'brew tap homebrew/python && brew update && mkdir -p $(brew --repo)/Library/Taps/coin-or-tools && cp -rf ~/homebrew-coinor $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor';
-      docker commit $(docker ps -l -q) linuxbrew;
-    fi
-  - env | grep TRAVIS | tee /tmp/travis.env
+branches:
+  only:
+    - master
 
 install:
-  - export HOMEBREW_DEVELOPER="1"
+  - if [ -f ".git/shallow" ]; then travis_retry git fetch --unshallow; fi
+  - unset DYLD_LIBRARY_PATH
+  - if [ `uname` = "Linux" ]; then bash ci/setup_travis_linux.sh; fi
+  - if [ `uname` = "Linux" ]; then export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"; fi
+  - export HOMEBREW_DEVELOPER=1
+  - export HOMEBREW_NO_AUTO_UPDATE=1
+  - export HOMEBREW_FORCE_VENDOR_RUBY=1
+  - export HOMEBREW_VERBOSE=1 HOMEBREW_VERBOSE_USING_DOTS=1
+  - if [ `uname` = "Linux" ]; then brew update; brew install pkg-config; fi
+  - mkdir -p $(brew --repo)/Library/Taps/coin-or-tools
+  - ln -s "$TRAVIS_BUILD_DIR" $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor
+  - export TRAVIS_BUILD_DIR="$(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor"
+  - chmod 0644 $(brew --repo)/Library/Taps/coin-or-tools/homebrew-coinor/*.rb
+  - umask 022
+  - brew tap --repair
+  - brew update
+  - if [ `uname` = "Linux" ]; then brew tap linuxbrew/xorg; fi
+  - if [ `uname` = "Darwin" ]; then brew cask reinstall xquartz; fi
 
 script:
-  - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then
-      brew test-bot --tap=coin-or-tools/coinor;
-    else
-      docker run
-        -w /home/linuxbrew/.linuxbrew/Library/Taps/coin-or-tools/homebrew-coinor
-        --env-file /tmp/travis.env
-        -t
-        linuxbrew
-        brew test-bot --tap=coin-or-tools/coinor;
-    fi
+  - brew test-bot --tap=coin-or-tools/coinor;
 
 notifications:
   email: never
