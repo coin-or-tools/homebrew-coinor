@@ -1,8 +1,8 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://projects.coin-or.org/Cbc"
-  url "http://www.coin-or.org/download/pkgsource/Cbc/Cbc-2.9.6.tgz"
-  sha256 "b32c338465222594786de22943b7d124481f51a7642876809695e2ad1250f4f2"
+  url "https://www.coin-or.org/download/source/Cbc/Cbc-2.9.8.tgz"
+  sha256 "ff6860400a1390170f9cb19fab6f21c1997138d285b5f225be04c4642c9a7bea"
   head "https://projects.coin-or.org/svn/Cbc/trunk"
 
   depends_on "homebrew/science/asl" => :optional
@@ -29,6 +29,7 @@ class Cbc < Formula
             "--prefix=#{prefix}",
             "--datadir=#{pkgshare}",
             "--includedir=#{include}/cbc",
+            "--enable-cbc-parallel",
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
