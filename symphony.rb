@@ -24,13 +24,14 @@ class Symphony < Formula
   depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
   depends_on "cgl"
   depends_on :fortran
+  depends_on "pkg-config" => :build
 
   def install
     args = ["--disable-debug",
             "--disable-dependency-tracking",
             "--prefix=#{prefix}",
             "--datadir=#{pkgshare}",
-            "--includedir=#{include}/cbc",
+            "--includedir=#{include}/symphony",
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
