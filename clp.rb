@@ -1,7 +1,7 @@
 class Clp < Formula
   desc "Linear programming solver"
   homepage "https://projects.coin-or.org/Clp"
-  url "http://www.coin-or.org/download/pkgsource/Clp/Clp-1.16.7.tgz"
+  url "https://www.coin-or.org/download/pkgsource/Clp/Clp-1.16.7.tgz"
   sha256 "05e8537c334d086b945389ea42a17ee70e4c192d1ff67ac6ab38817ace24b207"
   head "https://projects.coin-or.org/svn/Clp/trunk"
 
@@ -10,20 +10,19 @@ class Clp < Formula
   glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
 
-  depends_on "homebrew/science/openblas" => :optional
-  depends_on "homebrew/science/glpk448" if build.with? "glpk"
-  depends_on "homebrew/science/asl" => :optional
-  depends_on "homebrew/science/mumps" => [:optional, "without-mpi"] + openblas_dep
+  depends_on "ampl-mp" => :optional
+  depends_on "gcc"
+  depends_on "glpk448" if build.with? "glpk"
+  depends_on "openblas" => :optional
+  depends_on "suite-sparse" => :optional if build.without? "glpk"
 
-  ss_opts = openblas_dep.clone
-  ss_opts << :optional if build.without? "glpk"
-  depends_on "homebrew/science/suite-sparse" => ss_opts
+  depends_on "dpo/openblas/mumps" => [:optional, "without-open-mpi"]
 
   depends_on "coinutils"
   depends_on "osi" => (glpk_dep + openblas_dep)
+  depends_on "pkg-config" => :build
 
   depends_on "readline" => :recommended
-  depends_on :fortran
 
   def install
     args = ["--disable-debug",

@@ -1,22 +1,22 @@
 class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
-  homepage "http://www.coin-or.org/projects/CoinUtils.xml"
-  url "http://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.10.10.tgz"
+  homepage "https://projects.coin-or.org/CoinUtils"
+  url "https://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.10.10.tgz"
   sha256 "bedace82a76d4644efabb3a0bce03d5f00933a8500dbff084a7b7791aeb91561"
 
-  option "with-glpk", "Build with support for reading AMPL/GMPL models" 
+  option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
-  depends_on :fortran
+  depends_on "gcc"
 
   depends_on "coin_data_sample"
   depends_on "coin_data_netlib"
 
   depends_on "doxygen"
-  depends_on "graphviz" => :build  # For documentation.
+  depends_on "graphviz" => :build # For documentation.
   depends_on "pkg-config" => :build
 
-  depends_on "homebrew/science/openblas" => :optional
-  depends_on "homebrew/science/glpk448" if build.with? "glpk"
+  depends_on "openblas" => :optional
+  depends_on "glpk448" if build.with? "glpk"
 
   def install
     args = ["--disable-debug",
@@ -26,12 +26,11 @@ class Coinutils < Formula
             "--includedir=#{include}/coinutils",
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
-            "--with-dot",
-           ]
+            "--with-dot"]
 
     if build.with? "openblas"
       openblaslib = "-L#{Formula["openblas"].opt_lib} -lopenblas"
-      openblasinc = "#{Formula["openblas"].opt_include}"
+      openblasinc = Formula["openblas"].opt_include.to_s
       args << "--with-blas-lib=#{openblaslib}"
       args << "--with-blas-incdir=#{openblasinc}"
       args << "--with-lapack-lib=#{openblaslib}"
@@ -46,7 +45,7 @@ class Coinutils < Formula
     system "./configure", *args
 
     system "make"
-    ENV.deparallelize  # make install fails in parallel.
+    ENV.deparallelize # make install fails in parallel.
     system "make", "test"
     system "make", "install"
   end
