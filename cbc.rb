@@ -1,13 +1,15 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://projects.coin-or.org/Cbc"
-  url "https://www.coin-or.org/download/pkgsource/Cbc/Cbc-2.9.6.tgz"
-  sha256 "b32c338465222594786de22943b7d124481f51a7642876809695e2ad1250f4f2"
+  url "https://www.coin-or.org/download/pkgsource/Cbc/Cbc-2.9.9.tgz"
+  sha256 "2b905d1b39132a84ba624cc6f5910eb4b8d864dec4f061a2afbc030c5d802df4"
   head "https://projects.coin-or.org/svn/Cbc/trunk"
+
+  option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
   depends_on "ampl-mp" => :optional
   depends_on "gcc"
-  depends_on "glpk" => :optional
+  depends_on "glpk448" if build.with? "glpk"
   depends_on "dpo/openblas/mumps" => [:optional, "without-open-mpi"]
   depends_on "openblas" => :optional
   depends_on "pkg-config" => :build
@@ -33,8 +35,8 @@ class Cbc < Formula
             "--with-dot"]
 
     if build.with? "glpk"
-      args << "--with-glpk-lib=-L#{Formula["glpk"].opt_lib} -lglpk"
-      args << "--with-glpk-incdir=#{Formula["glpk"].opt_include}"
+      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
+      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
     end
 
     if build.with? "ampl-mp"
