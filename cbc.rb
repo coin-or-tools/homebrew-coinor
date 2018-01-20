@@ -4,13 +4,15 @@ class Cbc < Formula
   url "https://www.coin-or.org/download/pkgsource/Cbc/Cbc-2.9.9.tgz"
   sha256 "2b905d1b39132a84ba624cc6f5910eb4b8d864dec4f061a2afbc030c5d802df4"
   head "https://projects.coin-or.org/svn/Cbc/trunk"
+  revision 1
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
+  option "with-parallel", "Build with parallel mode enabled"
 
   depends_on "ampl-mp" => :optional
   depends_on "gcc"
   depends_on "glpk448" if build.with? "glpk"
-  depends_on "dpo/openblas/mumps" => [:optional, "without-open-mpi"]
+  depends_on "dpo/openblas/mumps" => [:optional, "without-mpi"]
   depends_on "openblas" => :optional
   depends_on "pkg-config" => :build
   depends_on "suite-sparse" => :optional
@@ -33,6 +35,8 @@ class Cbc < Formula
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot"]
+
+    args << "--enable-cbc-parallel" if build.with? "parallel"
 
     if build.with? "glpk"
       args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
