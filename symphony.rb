@@ -1,8 +1,8 @@
 class Symphony < Formula
   desc "Framework for solving mixed integer linear programs"
   homepage "https://projects.coin-or.org/SYMPHONY"
-  url "https://www.coin-or.org/download/pkgsource/SYMPHONY/SYMPHONY-5.6.14.tgz"
-  sha256 "666d1c72c4bb084b470c4f066b1694f7b3b11a479de15d9d1e9bfe1b53e3ae63"
+  url "https://www.coin-or.org/download/pkgsource/SYMPHONY/SYMPHONY-5.6.16.tgz"
+  sha256 "8578c2ff87b2c40f2f82bee3d145a6960c380a4ea850d760cad3a0b6e7c4e255"
   head "https://projects.coin-or.org/svn/SYMPHONY/trunk"
 
   option "without-openmp", "Disable openmp support"
