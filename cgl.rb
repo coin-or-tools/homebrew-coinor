@@ -1,8 +1,8 @@
 class Cgl < Formula
   desc "Cut-generation library"
   homepage "https://projects.coin-or.org/Cgl"
-  url "https://www.coin-or.org/download/pkgsource/Cgl/Cgl-0.59.6.tgz"
-  sha256 "7714a42526a98319bfa331d3d6a73a73c277abf23c3c59c25b602965b9d66d4c"
+  url "https://www.coin-or.org/download/pkgsource/Cgl/Cgl-0.59.10.tgz"
+  sha256 "2cf14a4c2dcbb5ca4f5d3bf283be1c7358db995de794d8fe32d3e20fa5651b4c"
   head "https://projects.coin-or.org/svn/Cgl/trunk"
 
   option "with-ampl-mp", "Build CLP with ASL support"
