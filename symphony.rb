@@ -26,6 +26,13 @@ class Symphony < Formula
   depends_on "cgl"
   depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
 
+  # fixed in
+  # https://github.com/coin-or/SYMPHONY/commit/907c0be7372580e849421ffda073af45daed35e5
+  patch do
+    url "https://gist.githubusercontent.com/dpo/a41ada558e034553fbef4eafa8ef72d8/raw/b3c579a00528d280ecbdf6b19a3b1b8ca04286ab/a.rb"
+    sha256 "bd2169b216c1c961980afc97036c80a95a5c929e355378b934b159e87710909a"
+  end
+
   def install
     args = ["--disable-debug",
             "--disable-dependency-tracking",
