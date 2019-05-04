@@ -1,8 +1,8 @@
 class Osi < Formula
   desc "Abstract class to generic LP solver, derived classes for specific solvers"
   homepage "https://projects.coin-or.org/Osi/"
-  url "https://www.coin-or.org/download/pkgsource/Osi/Osi-0.107.9.tgz"
-  sha256 "09a5f8778e710d8f1d4c49702ef9907eeaa6915cd99a229e58730d003d2c9f07"
+  url "https://www.coin-or.org/download/pkgsource/Osi/Osi-0.108.4.tgz"
+  sha256 "901b06e944e59dd134482a5f1dc7576bccd741d51c61ee15a5f2f85af7cb30a3"
   head "https://projects.coin-or.org/svn/Osi/trunk"
 
   option "with-glpk", "Build with interface to GLPK and support for reading AMPL/GMPL models"
