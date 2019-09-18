@@ -18,8 +18,8 @@ class Clp < Formula
 
   depends_on "dpo/openblas/mumps" => [:optional, "without-open-mpi"]
 
-  depends_on "coinutils"
-  depends_on "osi" => (glpk_dep + openblas_dep)
+  depends_on "coin-or-tool/coinor/coinutils"
+  depends_on "coin-or-tool/coinor/osi" => (glpk_dep + openblas_dep)
   depends_on "pkg-config" => :build
 
   depends_on "readline" => :recommended

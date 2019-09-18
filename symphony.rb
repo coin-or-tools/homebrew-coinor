@@ -23,8 +23,8 @@ class Symphony < Formula
   depends_on "pkg-config" => :build
   depends_on "readline" => :recommended
 
-  depends_on "cgl"
-  depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
+  depends_on "coin-or-tool/coinor/cgl"
+  depends_on "coin-or-tool/coinor/clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
 
   def install
     args = ["--disable-debug",

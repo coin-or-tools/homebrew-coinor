@@ -17,7 +17,7 @@ class Cgl < Formula
   openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
   suitesparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
 
-  depends_on "clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
+  depends_on "coin-or-tools/coinor/clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
   depends_on "pkg-config" => :build
 
   def install
