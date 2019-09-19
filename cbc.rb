@@ -24,7 +24,7 @@ class Cbc < Formula
   suite_sparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
 
   depends_on "coin-or-tools/coinor/clp" => (asl_dep + glpk_dep + openblas_dep + mumps_dep + suite_sparse_dep)
-  depends_on "coin-or-tool/coinor/cgl"
+  depends_on "coin-or-tools/coinor/cgl"
 
   def install
     args = ["--disable-debug",
