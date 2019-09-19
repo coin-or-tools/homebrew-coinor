@@ -13,7 +13,7 @@ class Osi < Formula
   depends_on "openblas" => :optional
   depends_on "glpk448" if build.with? "glpk"
 
-  depends_on "coin-or-tool/coinor/coinutils" => (glpk_dep + openblas_dep)
+  depends_on "coin-or-tools/coinor/coinutils" => (glpk_dep + openblas_dep)
   depends_on "pkg-config" => :build
 
   def install

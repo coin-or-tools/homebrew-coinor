@@ -6,7 +6,7 @@ class Vol < Formula
   head "https://projects.coin-or.org/svn/Vol/trunk"
 
   depends_on "coin_data_sample"
-  depends_on "coin-or-tool/coinor/osi" => :recommended
+  depends_on "coin-or-tools/coinor/osi" => :recommended
 
   def install
     args = ["--disable-debug",
