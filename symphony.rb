@@ -3,7 +3,7 @@ class Symphony < Formula
   homepage "https://projects.coin-or.org/SYMPHONY"
   url "https://www.coin-or.org/download/pkgsource/SYMPHONY/SYMPHONY-5.6.17.tgz"
   sha256 "346367869ca9387e0404dbf6469146a5bcf436795db9dc5b5736ed04eda72fb0"
-  head "https://github.com/coin-or/SYMPHONY""
+  head "https://github.com/coin-or/SYMPHONY"
 
   option "without-openmp", "Disable openmp support"
   option "with-ampl-mp", "Build CLP with ASL support"
@@ -12,11 +12,11 @@ class Symphony < Formula
   option "with-openblas", "Build CLP with OpenBLAS support"
   option "with-suite-sparse", "Build CLP with SuiteSparse support"
 
-  asl_dep = (build.with? "ampl-mp") ? ["with-ampl-mp"] : []
-  glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
-  mumps_dep = (build.with? "mumps") ? ["with-mumps"] : []
-  openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
-  suitesparse_dep = (build.with? "suite-sparse") ? ["with-suite-sparse"] : []
+  asl_dep = build.with?("ampl-mp") ? ["with-ampl-mp"] : []
+  glpk_dep = build.with?("glpk") ? ["with-glpk"] : []
+  mumps_dep = build.with?("mumps") ? ["with-mumps"] : []
+  openblas_dep = build.with?("openblas") ? ["with-openblas"] : []
+  suitesparse_dep = build.with?("suite-sparse") ? ["with-suite-sparse"] : []
 
   depends_on "gcc"
   depends_on "glpk448" if build.with? "glpk"

@@ -7,8 +7,8 @@ class Osi < Formula
 
   option "with-glpk", "Build with interface to GLPK and support for reading AMPL/GMPL models"
 
-  glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
-  openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
+  glpk_dep = build.with?("glpk") ? ["with-glpk"] : []
+  openblas_dep = build.with?("openblas") ? ["with-openblas"] : []
 
   depends_on "openblas" => :optional
   depends_on "glpk448" if build.with? "glpk"

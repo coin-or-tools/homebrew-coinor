@@ -7,8 +7,8 @@ class Clp < Formula
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
-  glpk_dep = (build.with? "glpk") ? ["with-glpk"] : []
-  openblas_dep = (build.with? "openblas") ? ["with-openblas"] : []
+  glpk_dep = build.with?("glpk") ? ["with-glpk"] : []
+  openblas_dep = build.with?("openblas") ? ["with-openblas"] : []
 
   depends_on "ampl-mp" => :optional
   depends_on "gcc"
