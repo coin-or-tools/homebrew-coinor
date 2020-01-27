@@ -3,7 +3,7 @@ class Symphony < Formula
   homepage "https://projects.coin-or.org/SYMPHONY"
   url "https://www.coin-or.org/download/pkgsource/SYMPHONY/SYMPHONY-5.6.17.tgz"
   sha256 "346367869ca9387e0404dbf6469146a5bcf436795db9dc5b5736ed04eda72fb0"
-  head "https://projects.coin-or.org/svn/SYMPHONY/trunk"
+  head "https://github.com/coin-or/SYMPHONY""
 
   option "without-openmp", "Disable openmp support"
   option "with-ampl-mp", "Build CLP with ASL support"

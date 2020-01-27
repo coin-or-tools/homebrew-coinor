@@ -1,8 +1,8 @@
 class Dylp < Formula
   desc "Dynamic simplex algorithm for linear programming"
   homepage "https://projects.coin-or.org/DyLP"
-  url "https://www.coin-or.org/download/pkgsource/DyLP/DyLP-1.10.3.tgz"
-  sha256 "34984099975e324864ec8b585208007708097ca9d1738e9a3ee6292f43942456"
+  url "https://www.coin-or.org/download/pkgsource/DyLP/DyLP-1.10.4.tgz"
+  sha256 "1cf833257a9a849bbb880228565aafc625a842999c3ff322f34f0b352892798b"
   head "https://projects.coin-or.org/svn/DyLP/trunk"
 
   depends_on "coin-or-tools/coinor/osi"

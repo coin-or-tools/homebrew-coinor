@@ -1,8 +1,8 @@
 class Vol < Formula
   desc "Subgradient method that produces primal and dual solutions"
   homepage "https://projects.coin-or.org/Vol"
-  url "https://www.coin-or.org/download/pkgsource/Vol/Vol-1.5.3.tgz"
-  sha256 "3e895d858bb68831024f4c7c6a0fefbc03f89fe78fb6cfc69c4df5396d3e2a64"
+  url "https://www.coin-or.org/download/pkgsource/Vol/Vol-1.5.4.tgz"
+  sha256 "6cd53e2f4ad0aa68348901bf12fe146335812ee1d85bf272ae0c2bbd76faf1ae"
   head "https://projects.coin-or.org/svn/Vol/trunk"
 
   depends_on "coin_data_sample"
