@@ -1,18 +1,9 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
-<<<<<<< Updated upstream
   homepage "https://github.com/coin-or/Cbc"
   url "https://github.com/coin-or/Cbc/archive/releases/2.10.5.tar.gz"
-  sha256 " "
+  sha256 "cc44c1950ff4615e7791d7e03ea34318ca001d3cac6dc3f7f5ee392459ce6719"
   head "https://github.com/coin-or/Cbc/tree/releases/2.10.5/Cbc"
-  revision 2
-=======
-  homepage "https://github.com/coin-or/Cbc" # Updated homepage url reference to GitHub
-  url "https://github.com/coin-or/Cbc/archive/releases/2.10.5.tar.gz" # Updated url reference to GitHub, version updated to 2.10.5
-  sha256 "cc44c1950ff4615e7791d7e03ea34318ca001d3cac6dc3f7f5ee392459ce6719" # Updated sha256 checksum to match updated version
-  head "https://github.com/coin-or/Cbc/tree/releases/2.10.5/Cbc" # Updated url reference to GitHub, version updated to 2.10.5
-  revision 2 # Updated revision count
->>>>>>> Stashed changes
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
   option "with-parallel", "Build with parallel mode enabled"

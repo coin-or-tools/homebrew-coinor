@@ -1,18 +1,9 @@
 class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
-<<<<<<< Updated upstream
   homepage "https://github.com/coin-or/CoinUtils"
   url "https://github.com/coin-or/CoinUtils/archive/releases/2.11.4.tar.gz"
-  sha256 ""
+  sha256 "d4effff4452e73356eed9f889efd9c44fe9cd68bd37b608a5ebb2c58bd45ef81"
   head "https://github.com/coin-or/CoinUtils/tree/releases/2.11.4/CoinUtils"
-  revision 1
-=======
-  homepage "https://github.com/coin-or/CoinUtils" # Updated homepage url reference to GitHub
-  url "https://github.com/coin-or/CoinUtils/archive/releases/2.11.4.tar.gz" # Updated url reference to GitHub, version updated to 2.11.4
-  sha256 "d4effff4452e73356eed9f889efd9c44fe9cd68bd37b608a5ebb2c58bd45ef81" # Updated sha256 checksum to match updated version
-  head "https://github.com/coin-or/CoinUtils/tree/releases/2.11.4/CoinUtils" # Updated head url reference to GitHub, version updated to 2.11.4
-  revision 1  # Added revision count
->>>>>>> Stashed changes
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
@@ -56,7 +47,7 @@ class Coinutils < Formula
 
     system "make"
     ENV.deparallelize # make install fails in parallel.
-    # system "make", "test" # Commented out this line as described at https://github.com/coin-or/CoinUtils/issues/151#issuecomment-791637851 to deal with make test assertion error
+    system "make", "test"
     system "make", "install"
   end
 end

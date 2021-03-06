@@ -1,10 +1,9 @@
 class Symphony < Formula
   desc "Framework for solving mixed integer linear programs"
-  homepage "https://github.com/coin-or/SYMPHONY" # Updated homepage url reference to GitHub
-  url "https://github.com/coin-or/SYMPHONY/archive/releases/5.6.17.tar.gz" # Updated url reference to GitHub, version already up-to-date as of review
-  sha256 "9631c11f4b4b631b4b9e74f0438af44c152d82043568b0b906c95705700b654d" # Updated sha256 checksum to match GitHub version
-  head "https://github.com/coin-or/SYMPHONY/tree/releases/5.6.17/SYMPHONY" # Updated head url reference to GitHub, version already up-to-date as of review
-  revision 1 # Added revision count
+  homepage "https://github.com/coin-or/SYMPHONY" 
+  url "https://github.com/coin-or/SYMPHONY/archive/releases/5.6.17.tar.gz"
+  sha256 "9631c11f4b4b631b4b9e74f0438af44c152d82043568b0b906c95705700b654d"
+  head "https://github.com/coin-or/SYMPHONY/tree/releases/5.6.17/SYMPHONY"
 
   option "without-openmp", "Disable openmp support"
   option "with-ampl-mp", "Build CLP with ASL support"

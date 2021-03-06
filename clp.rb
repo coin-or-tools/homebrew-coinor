@@ -1,18 +1,9 @@
 class Clp < Formula
   desc "Linear programming solver"
-<<<<<<< Updated upstream
   homepage "https://github.com/coin-or/Clp"
   url "https://github.com/coin-or/Clp/archive/releases/1.17.6.tar.gz"
-  sha256 ""
+  sha256 "afff465b1620cfcbb7b7c17b5d331d412039650ff471c4160c7eb24ae01284c9"
   head "https://github.com/coin-or/Clp/tree/releases/1.17.6/Clp"
-  revision 1
-=======
-  homepage "https://github.com/coin-or/Clp" # Updated homepage url reference to GitHub
-  url "https://github.com/coin-or/Clp/archive/releases/1.17.6.tar.gz" # Updated url reference to GitHub, version updated to 1.17.6
-  sha256 "afff465b1620cfcbb7b7c17b5d331d412039650ff471c4160c7eb24ae01284c9" # Updated sha256 checksum to match updated version
-  head "https://github.com/coin-or/Clp/tree/releases/1.17.6/Clp" # Updated head url reference to GitHub, version updated to 1.17.6
-  revision 1  # Added revision count
->>>>>>> Stashed changes
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
