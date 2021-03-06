@@ -1,9 +1,9 @@
 class Vol < Formula
   desc "Subgradient method that produces primal and dual solutions"
-  homepage "https://projects.coin-or.org/Vol"
-  url "https://www.coin-or.org/download/pkgsource/Vol/Vol-1.5.4.tgz"
-  sha256 "6cd53e2f4ad0aa68348901bf12fe146335812ee1d85bf272ae0c2bbd76faf1ae"
-  head "https://projects.coin-or.org/svn/Vol/trunk"
+  homepage "https://github.com/coin-or/Vol" 
+  url "https://github.com/coin-or/Vol/archive/releases/1.5.4.tar.gz"
+  sha256 "5057fdd9f1a685b44e728ea9d6e501819ab357281569b7628790afd9db44ec3d"
+  head "https://github.com/coin-or/Vol/tree/releases/1.5.4/Vol"
 
   depends_on "coin_data_sample"
   depends_on "coin-or-tools/coinor/osi" => :recommended

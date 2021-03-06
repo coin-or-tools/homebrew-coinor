@@ -1,8 +1,9 @@
 class CoinDataSample < Formula
   desc "Sample models"
-  homepage "https://www.coin-or.org/download/source/Data"
-  url "https://www.coin-or.org/download/source/Data/Data-Sample-1.2.11.tgz"
-  sha256 "7d201dc37098dd1f7d68c24d71ca8083eaaa344ec44bd18799ac6245363f8467"
+  homepage "https://github.com/coin-or-tools/Data-Sample"
+  url "https://github.com/coin-or-tools/Data-Sample/archive/releases/1.2.12.tar.gz"
+  sha256 "e9e67c04adfbd85523890b346326b106075df615e922c229277e138dbcb77e64" 
+  head "https://github.com/coin-or-tools/Data-Sample/tree/releases/1.2.12" 
 
   def install
     system "./configure", "--disable-debug",
