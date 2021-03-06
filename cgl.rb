@@ -1,10 +1,18 @@
 class Cgl < Formula
   desc "Cut-generation library"
+<<<<<<< Updated upstream
   homepage "https://github.com/coin-or/Cgl"
   url "https://github.com/coin-or/Cgl/archive/releases/0.60.3.tar.gz"
   sha256 ""
   head "https://github.com/coin-or/Cgl/tree/releases/0.60.3/Cgl"
   revision 1
+=======
+  homepage "https://github.com/coin-or/Cgl" # Updated homepage url reference to GitHub
+  url "https://github.com/coin-or/Cgl/archive/releases/0.60.3.tar.gz" # Updated url reference to GitHub, version updated to 0.60.3
+  sha256 "cfeeedd68feab7c0ce377eb9c7b61715120478f12c4dd0064b05ad640e20f3fb" # Updated sha256 checksum to match updated version
+  head "https://github.com/coin-or/Cgl/tree/releases/0.60.3/Cgl" # Updated url reference to GitHub, version updated to 0.60.3
+  revision 1  # Added revision count
+>>>>>>> Stashed changes
 
   option "with-ampl-mp", "Build CLP with ASL support"
   option "with-glpk", "Build CLP with support for reading AMPL/GMPL models"
