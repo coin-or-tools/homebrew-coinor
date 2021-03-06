@@ -2,7 +2,7 @@ class Cgl < Formula
   desc "Cut-generation library"
   homepage "https://github.com/coin-or/Cgl"
   url "https://github.com/coin-or/Cgl/archive/releases/0.60.3.tar.gz"
-  sha256 "6b823a3fab554774018ec636f21f73ac7edd439b995dc0897a187dd657b23f18"
+  sha256 ""
   head "https://github.com/coin-or/Cgl/tree/releases/0.60.3/Cgl"
   revision 1
 
