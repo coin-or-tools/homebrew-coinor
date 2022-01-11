@@ -1,8 +1,8 @@
 class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
-  homepage "https://projects.coin-or.org/CoinUtils"
-  url "https://www.coin-or.org/download/pkgsource/CoinUtils/CoinUtils-2.11.3.tgz"
-  sha256 "b5f904da40a9f1525f6d09105b599f7a8d95dd079e81b974ad0e0ffef1413dbc"
+  homepage "https://github.com/coin-or/CoinUtils"
+  url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.6.tar.gz"
+  sha256 "6ea31d5214f7eb27fa3ffb2bdad7ec96499dd2aaaeb4a7d0abd90ef852fc79ca"
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
 
