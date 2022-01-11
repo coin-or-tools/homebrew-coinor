@@ -1,8 +1,8 @@
 class Clp < Formula
   desc "Linear programming solver"
-  homepage "https://projects.coin-or.org/Clp"
-  url "https://www.coin-or.org/download/pkgsource/Clp/Clp-1.17.3.tgz"
-  sha256 "c68fd7ed1cba58993d21ba61298366b2d26c6420ba4dbd470d38c3f617316e93"
+  homepage "https://github.com/coin-or/Clp"
+  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.6.tar.gz"
+  sha256 "afff465b1620cfcbb7b7c17b5d331d412039650ff471c4160c7eb24ae01284c9"
   head "https://projects.coin-or.org/svn/Clp/trunk"
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
