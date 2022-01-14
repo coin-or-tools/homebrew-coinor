@@ -2,19 +2,20 @@ version: 2
 jobs:
   build-macos:
     macos:
-      xcode: "11.3.0"
+      xcode: "12.4.0"
     environment:
       CIRCLE_REPOSITORY_URL: https://github.com/coin-or-tools/homebrew-coinor
       HOMEBREW_DEVELOPER: 1
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_FORCE_VENDOR_RUBY: 1
+      GITHUB_REF: refs/pull/$CIRCLE_PR_NUMBER/merge
+      GITHUB_REPOSITORY: coin-or-tools/coinor
 
     steps:
       - run: |
           brew --version
           brew update
           cd $(brew --repo)
-          if [ -e .git/shallow ]; then echo git fetch --unshallow; fi
           git fetch origin --tags
           git reset --hard origin/master
           brew --env
@@ -29,8 +30,11 @@ jobs:
           echo $repo
           mkdir -p $repo
           cp -a ./ $repo/
-      - run: |
-          brew test-bot --tap=coin-or-tools/coinor
+      - run: brew install-bundler-gems
+      - run: brew test-bot --only-cleanup-before
+      - run: brew test-bot --only-setup
+      - run: brew test-bot --only-tap-syntax
+      - run: brew test-bot --only-formulae --tap $GITHUB_REPOSITORY
 workflows:
   version: 2
   test-bot:
