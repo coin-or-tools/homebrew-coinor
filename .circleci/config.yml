@@ -9,7 +9,7 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
       HOMEBREW_FORCE_VENDOR_RUBY: 1
       GITHUB_REF: refs/pull/$CIRCLE_PR_NUMBER/merge
-      GITHUB_REPOSITORY: coin-or-tools/coinor
+      GITHUB_REPOSITORY: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
 
     steps:
       - run: |
@@ -34,7 +34,9 @@ jobs:
       - run: brew test-bot --only-cleanup-before
       - run: brew test-bot --only-setup
       - run: brew test-bot --only-tap-syntax
-      - run: brew test-bot --only-formulae --tap $GITHUB_REPOSITORY
+      - run: |
+            env
+            brew test-bot --only-formulae --tap $GITHUB_REPOSITORY
 workflows:
   version: 2
   test-bot:
