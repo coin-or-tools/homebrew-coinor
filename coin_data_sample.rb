@@ -1,9 +1,8 @@
 class CoinDataSample < Formula
   desc "Sample models"
   homepage "https://github.com/coin-or-tools/Data-Sample"
-  url "https://github.com/coin-or-tools/Data-Sample/archive/refs/tags/releases/1.2.11.tar.gz"
-  sha256 "888d21a31e93a529eb3743a92f2ba62b94b3eed4ddc44351feb8034a84c71ec5"
-  revision 1
+  url "https://github.com/coin-or-tools/Data-Sample/archive/refs/tags/releases/1.2.12.tar.gz"
+  sha256 "e9e67c04adfbd85523890b346326b106075df615e922c229277e138dbcb77e64"
 
   head "https://github.com/coin-or-tools/Data-Sample.git"
 
