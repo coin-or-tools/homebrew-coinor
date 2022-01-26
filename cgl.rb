@@ -1,9 +1,8 @@
 class Cgl < Formula
   desc "Cut-generation library"
-  homepage "https://projects.coin-or.org/Cgl"
-  url "https://www.coin-or.org/download/pkgsource/Cgl/Cgl-0.60.2.tgz"
-  sha256 "44ce4c567a55d4e7550c31f9255e655e365108f03a2cd55db623c142a535a9e9"
-  head "https://projects.coin-or.org/svn/Cgl/trunk"
+  homepage "https://github.com/coin-or/Cgl"
+  url "https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.4.tar.gz"
+  sha256 "57db498a0b7e1f3614ca061a93b23dc7e65017f092457c7366fa7d78397b5657"
 
   option "with-ampl-mp", "Build CLP with ASL support"
   option "with-glpk", "Build CLP with support for reading AMPL/GMPL models"

@@ -1,10 +1,8 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
-  homepage "https://projects.coin-or.org/Cbc"
-  url "https://www.coin-or.org/download/pkgsource/Cbc/Cbc-2.10.3.tgz"
-  sha256 "6b823a3fab554774018ec636f21f73ac7edd439b995dc0897a187dd657b23f18"
-  head "https://projects.coin-or.org/svn/Cbc/trunk"
-  revision 1
+  homepage "https://github.com/coin-or/Cbc"
+  url "https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.7.tar.gz"
+  sha256 "5aa5490e2bc39c3c03f3636c9bca459cb3f8f365e0280fd0c4759ce3119e5b19"
 
   option "with-glpk", "Build with support for reading AMPL/GMPL models"
   option "with-parallel", "Build with parallel mode enabled"
