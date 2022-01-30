@@ -1,30 +1,20 @@
 class Symphony < Formula
   desc "Framework for solving mixed integer linear programs"
-  homepage "https://projects.coin-or.org/SYMPHONY"
-  url "https://www.coin-or.org/download/pkgsource/SYMPHONY/SYMPHONY-5.6.17.tgz"
-  sha256 "346367869ca9387e0404dbf6469146a5bcf436795db9dc5b5736ed04eda72fb0"
+  homepage "https://github.com/coin-or/SYMPHONY"
+  url "https://github.com/coin-or/SYMPHONY/archive/refs/tags/releases/5.6.17.tar.gz"
+  sha256 "f6c2b9c9e60ebff4a665e243e765649334c5d0680f536d3d9c0c372025ab96dc"
+  revision 1
+
   head "https://github.com/coin-or/SYMPHONY"
 
-  option "without-openmp", "Disable openmp support"
-  option "with-ampl-mp", "Build CLP with ASL support"
-  option "with-glpk", "Build with support for reading AMPL/GMPL models"
-  option "with-mumps", "Build CLP with MUMPS support"
-  option "with-openblas", "Build CLP with OpenBLAS support"
-  option "with-suite-sparse", "Build CLP with SuiteSparse support"
-
-  asl_dep = build.with?("ampl-mp") ? ["with-ampl-mp"] : []
-  glpk_dep = build.with?("glpk") ? ["with-glpk"] : []
-  mumps_dep = build.with?("mumps") ? ["with-mumps"] : []
-  openblas_dep = build.with?("openblas") ? ["with-openblas"] : []
-  suitesparse_dep = build.with?("suite-sparse") ? ["with-suite-sparse"] : []
-
-  depends_on "gcc"
-  depends_on "glpk448" if build.with? "glpk"
   depends_on "pkg-config" => :build
-  depends_on "readline" => :recommended
 
   depends_on "coin-or-tools/coinor/cgl"
-  depends_on "coin-or-tools/coinor/clp" => (asl_dep + glpk_dep + mumps_dep + openblas_dep + suitesparse_dep)
+  depends_on "coin-or-tools/coinor/clp"
+  depends_on "coin-or-tools/coinor/dylp"
+  depends_on "coin-or-tools/coinor/glpk@448"
+  depends_on "gcc"
+  depends_on "readline"
 
   def install
     args = ["--disable-debug",
@@ -38,18 +28,21 @@ class Symphony < Formula
             "--enable-gnu-packages",
             "--with-application"]
 
-    if build.with? "readline"
-      ENV.append "CXXFLAGS", "-I#{Formula["readline"].opt_include}"
-      ENV.append "LDFLAGS",  "-L#{Formula["readline"].opt_lib} -lreadline"
-    end
+    ENV.append "CXXFLAGS", "-I#{Formula["readline"].opt_include}"
+    ENV.append "LDFLAGS",  "-L#{Formula["readline"].opt_lib} -lreadline"
 
-    if build.with? "glpk"
-      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
-      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
-      args << "--with-gmpl"
-    end
+    args << "--with-cgl-lib=-L#{Formula["coin-or-tools/coinor/cgl"].opt_lib} -lCgl"
+    args << "--with-cgl-incdir=#{Formula["coin-or-tools/coinor/cgl"].opt_include}/cgl/coin"
 
-    args << "--disable-openmp" if build.without? "openmp"
+    args << "--with-clp-lib=-L#{Formula["coin-or-tools/coinor/clp"].opt_lib} -lClp -lOsiClp"
+    args << "--with-clp-incdir=#{Formula["coin-or-tools/coinor/clp"].opt_include}/clp/coin"
+
+    args << "--with-dylp-lib=-L#{Formula["coin-or-tools/coinor/dylp"].opt_lib} -lDylp"
+    args << "--with-dylp-incdir=#{Formula["coin-or-tools/coinor/dylp"].opt_include}/dylp/coin"
+
+    args << "--with-glpk-lib=-L#{Formula["coin-or-tools/coinor/glpk@448"].opt_lib} -lglpk"
+    args << "--with-glpk-incdir=#{Formula["coin-or-tools/coinor/glpk@448"].opt_include}"
+    args << "--with-gmpl"
 
     system "./configure", *args
 
@@ -58,12 +51,13 @@ class Symphony < Formula
     ENV.deparallelize # make install fails in parallel.
     system "make", "install"
 
-    (pkgshare / "Datasets").install "Datasets/sample.mps"
-    (pkgshare / "Datasets").install "Datasets/sample.mod", "Datasets/sample.dat" if build.with? "glpk"
+    # (pkgshare / "Datasets").install "Datasets/sample.mps"
+    # (pkgshare / "Datasets").install "Datasets/sample.mod", "Datasets/sample.dat"
   end
 
   test do
-    system "#{bin}/symphony", "-F", "#{pkgshare}/Datasets/sample.mps"
-    system "#{bin}/symphony", "-F", "#{pkgshare}/Datasets/sample.mod", "-D", "#{pkgshare}/Datasets/sample.dat" if build.with? "gmpl"
+    system "#{bin}/symphony",
+           "-F",
+           "#{Formula["coin-or-tools/coinor/coin_data_sample"].pkgshare}/coin/Data/Sample/exmip1.mps"
   end
 end

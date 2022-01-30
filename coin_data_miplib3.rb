@@ -1,8 +1,11 @@
 class CoinDataMiplib3 < Formula
   desc "MIPLib models"
-  homepage "https://www.coin-or.org/download/source/Data"
-  url "https://www.coin-or.org/download/source/Data/Data-miplib3-1.2.7.tgz"
-  sha256 "7a6b15435e77e6758d605d0654f0fd2aeeec2d34061b0e95e71f698a047cbb4b"
+  homepage "https://github.com/coin-or-tools/Data-miplib3"
+  url "https://github.com/coin-or-tools/Data-miplib3/archive/refs/tags/releases/1.2.7.tar.gz"
+  sha256 "49578f714cd87247510747b8c63886ed3a6a1a90ffbbbf7e3cb772657737d622"
+  revision 1
+
+  head "https://github.com/coin-or-tools/Data-miplib3.git"
 
   def install
     system "./configure", "--disable-debug",

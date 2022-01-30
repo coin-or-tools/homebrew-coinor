@@ -3,18 +3,17 @@ class Osi < Formula
   homepage "https://github.com/coin-or/Osi"
   url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.7.tar.gz"
   sha256 "f1bc53a498585f508d3f8d74792440a30a83c8bc934d0c8ecf8cd8bc0e486228"
-  head "https://projects.coin-or.org/svn/Osi/trunk"
+  revision 1
 
-  option "with-glpk", "Build with interface to GLPK and support for reading AMPL/GMPL models"
+  head "https://github.com/coin-or/Osi.git"
 
-  glpk_dep = build.with?("glpk") ? ["with-glpk"] : []
-  openblas_dep = build.with?("openblas") ? ["with-openblas"] : []
+  keg_only "conflicts with formula in core"
 
-  depends_on "openblas" => :optional
-  depends_on "glpk448" if build.with? "glpk"
-
-  depends_on "coin-or-tools/coinor/coinutils" => (glpk_dep + openblas_dep)
   depends_on "pkg-config" => :build
+
+  depends_on "coin-or-tools/coinor/coinutils"
+  depends_on "coin-or-tools/coinor/glpk@448"
+  depends_on "openblas" => :recommended
 
   def install
     args = ["--disable-debug",
@@ -22,13 +21,23 @@ class Osi < Formula
             "--prefix=#{prefix}",
             "--datadir=#{pkgshare}",
             "--includedir=#{include}/osi",
-            "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
-            "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
-            "--with-dot"]
+            "--with-sample-datadir=#{Formula["coin-or-tools/coinor/coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
+            "--with-netlib-datadir=#{Formula["coin-or-tools/coinor/coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
+            "--with-dot",
+            "--with-glpk-lib=-L#{Formula["coin-or-tools/coinor/glpk@448"].opt_lib} -lglpk",
+            "--with-glpk-incdir=#{Formula["coin-or-tools/coinor/glpk@448"].opt_include}"]
 
-    if build.with? "glpk"
-      args << "--with-glpk-lib=-L#{Formula["glpk448"].opt_lib} -lglpk"
-      args << "--with-glpk-incdir=#{Formula["glpk448"].opt_include}"
+    # the build fails if we include the location of CoinUtils: symbols that are in libglpk are supposedly undefined
+    # "--with-coinutils-lib=-L#{Formula["coin-or-tools/coinor/coinutils"].opt_lib} -lCoinUtils",
+    # "--with-coinutils-incdir=#{Formula["coin-or-tools/coinor/coinutils"].opt_include}/coinutils/coin"]
+
+    if build.with? "openblas"
+      openblaslib = "-L#{Formula["openblas"].opt_lib} -lopenblas"
+      openblasinc = Formula["openblas"].opt_include.to_s
+      args << "--with-blas-lib=#{openblaslib}"
+      args << "--with-blas-incdir=#{openblasinc}"
+      args << "--with-lapack-lib=#{openblaslib}"
+      args << "--with-lapack-incdir=#{openblasinc}"
     end
 
     system "./configure", *args
