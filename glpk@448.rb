@@ -6,6 +6,13 @@ class GlpkAT448 < Formula
   sha256 "abc2c8f895b20a91cdfcfc04367a0bc8677daf8b4ec3f3e86c5b71c79ac6adb1"
   revision 1
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/glpk@448-4.48_1"
+    sha256 cellar: :any,                 big_sur:      "72b222ba9b1e53b7ed0914dec57a00891d0fb4451676ffb5c0a6e47d8f555e65"
+    sha256 cellar: :any,                 catalina:     "077f610efd8f7f4799deb232a8aafdc1c1435a4dac8811c0f96cac7d52beebfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb43f08045e00eded38f00441c50cea26f234f08079c49e460c15e36c28e49c0"
+  end
+
   keg_only "this formula installs an older version of the GLPK libraries"
 
   depends_on "gmp"
