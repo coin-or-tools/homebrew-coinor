@@ -1,18 +1,11 @@
 class Symphony < Formula
   desc "Framework for solving mixed integer linear programs"
   homepage "https://github.com/coin-or/SYMPHONY"
-  url "https://github.com/coin-or/SYMPHONY/archive/refs/tags/releases/5.6.17.tar.gz"
-  sha256 "f6c2b9c9e60ebff4a665e243e765649334c5d0680f536d3d9c0c372025ab96dc"
+  url "https://github.com/coin-or/SYMPHONY/archive/refs/tags/releases/5.6.18.tar.gz"
+  sha256 "f566e2986c6b4269a5a128cea13622d3d90b046b7a9151ebd89f27c495f183a0"
   revision 1
 
   head "https://github.com/coin-or/SYMPHONY"
-
-  bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/symphony-5.6.17_1"
-    sha256 cellar: :any,                 big_sur:      "1abc5b95dd71c4f8adf52c2e3d4dd7fb0ca3ef603919682c2bc4057ecec43e4a"
-    sha256 cellar: :any,                 catalina:     "b96391eb3099afa52d40d7edf30f72ba98857483a3c67f523c37f331ed6a7987"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7597c630fadef7c6ba99197d16f9a00d0c2f334cf04b757cc1f431e7e4977652"
-  end
 
   depends_on "pkg-config" => :build
 
