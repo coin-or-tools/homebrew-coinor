@@ -4,6 +4,13 @@ class MumpsSeq < Formula
   url "http://mumps.enseeiht.fr/MUMPS_5.4.1.tar.gz"
   sha256 "93034a1a9fe0876307136dcde7e98e9086e199de76f1c47da822e7d4de987fa8"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/mumps-seq-5.4.1"
+    sha256 cellar: :any,                 big_sur:      "a1e71aad84f101766f17108c643b0d7757c92227a2da2f4d28cba3ffe1693a47"
+    sha256 cellar: :any,                 catalina:     "c64fdabb2abc4e98c0a0cedb3ffc0104e116ba9ce978005d8e4a60a7fdc71691"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dbdeabc21c642e8e601db0398d6287e226d4f2784581295da963b3f31dfe1caa"
+  end
+
   keg_only "conflicts with parallel builds of MUMPS"
 
   depends_on "gcc"
