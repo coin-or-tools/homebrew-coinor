@@ -7,6 +7,13 @@ class Clp < Formula
 
   head "https://github.com/coin-or/Clp.git"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/clp-1.17.6_1"
+    sha256 cellar: :any,                 big_sur:      "d34b4a2691d2a93e7b6333a321fe8de10317ca662c1ab94d27a98b4bdb963cfb"
+    sha256 cellar: :any,                 catalina:     "274d598a7edf376e015d47fa257cf1f142e22bc4880e63fbb021cbfccccdda45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5115d4f19f48c240308dd561939bb54c40036ae5f43fef7c8ac53fe8cf3a4788"
+  end
+
   keg_only "conflicts with formula in core"
 
   depends_on "pkg-config" => :build
