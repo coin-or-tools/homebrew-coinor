@@ -28,7 +28,10 @@ class Cgl < Formula
             "--with-sample-datadir=#{Formula["coin-or-tools/coinor/coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
             "--with-clp-lib=-L#{Formula["coin-or-tools/coinor/clp"].opt_lib} -lClp",
             "--with-clp-incdir=#{Formula["coin-or-tools/coinor/clp"].opt_include}/clp/coin",
-            "--with-dot"]
+            "--with-dot",
+            "--without-osidylp",
+            "--without-osivol"
+           ]
 
     system "./configure", *args
 
