@@ -30,7 +30,7 @@ class Cgl < Formula
             "--with-clp-incdir=#{Formula["coin-or-tools/coinor/clp"].opt_include}/clp/coin",
             "--with-dot",
             "--without-osidylp",
-            "--without-osivol"
+            "--without-osivol"]
            ]
 
     system "./configure", *args
