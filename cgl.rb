@@ -31,7 +31,6 @@ class Cgl < Formula
             "--with-dot",
             "--without-osidylp",
             "--without-osivol"]
-           ]
 
     system "./configure", *args
 
