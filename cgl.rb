@@ -8,10 +8,10 @@ class Cgl < Formula
   head "https://github.com/coin-or/Cgl.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cgl-0.60.4_1"
-    sha256 cellar: :any,                 big_sur:      "8326f9a549ec9d72fd13338189b226aa70f24dcaf3294de8df2781b384be56b2"
-    sha256 cellar: :any,                 catalina:     "edee468661b542a3ef14cb341a4efd56d3594464abaf44fd2c8d1104a7f4ef21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "231b3e013594077ae22c6249f70caeec57a4a1bd5aed9f79d469ae5c851ae367"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cgl-0.60.5_1"
+    sha256 cellar: :any,                 big_sur:      "cc216ff362787ae8eded9927aa5e42cd41359b8bbe0eda1772fe7deeb5486919"
+    sha256 cellar: :any,                 catalina:     "26c93fa9913d68a8adee0b3aea306ef0f592ee8a83fccb0616b3cf07e1359c4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bf8626f34b7734320781b94ec047fce63e7ddcc3dc7ea7ae2141e3a44d3d247f"
   end
 
   keg_only "conflicts with formula in core"
