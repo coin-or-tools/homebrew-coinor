@@ -7,10 +7,10 @@ class CoinDataNetlib < Formula
   head "https://github.com/coin-or-tools/Data-Netlib.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coin_data_netlib-1.2.8_1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "7fe63490b380635e680de82598e56f63465fd0c47bea4c1abdb93db668866536"
-    sha256 cellar: :any_skip_relocation, catalina:     "16264e1a6a85982fbae92e1f6b3bca835a7a3aafce8f0843fd6fba2c7624a2eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dc714199e7346b1e7623b8ce3f85e1b72a4db5bb079ae670ed3e0d38e6aac5fb"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coin_data_netlib-1.2.10"
+    sha256 cellar: :any_skip_relocation, big_sur:      "b8f35293ac1d06877600005ed5c37e91920874f33e12c81eca992db225e00492"
+    sha256 cellar: :any_skip_relocation, catalina:     "a530cedcb669e3207eb2f0e7c04597c8ce8f3566f00afd9623a4cb463d078233"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "780c230901e4a707efa5d5fea7587686f5f63172809048a575f58b657917b1b2"
   end
 
   def install
