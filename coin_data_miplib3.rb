@@ -7,10 +7,10 @@ class CoinDataMiplib3 < Formula
   head "https://github.com/coin-or-tools/Data-miplib3.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coin_data_miplib3-1.2.7_1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "9685f3412bfbae39080ad00804b1167e5ba5154059145604ff13d7a4fa41bc22"
-    sha256 cellar: :any_skip_relocation, catalina:     "f238365016b7ce5de35f985461c060c9fd631b1b1d97f59c10e3da57f5b82237"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cd8931f9109c8ebcd0cba2e790f123cfe06679c26cd6138072682379803a5021"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coin_data_miplib3-1.2.8"
+    sha256 cellar: :any_skip_relocation, big_sur:      "2337fe36aecab70eea7aec8086e75eeb81cf370fb1e15a1cb21f5d5b7249af87"
+    sha256 cellar: :any_skip_relocation, catalina:     "38296f717b1801f8b6f55c7fd293d19827da43ea8b3f72c0b59c1ee1da2d1d85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "ae6de0753909ad9f4e11cad5665f7b2a87cb1c32f9151a3fc4872e317f65fc5f"
   end
 
   def install
