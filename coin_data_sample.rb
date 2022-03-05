@@ -7,10 +7,10 @@ class CoinDataSample < Formula
   head "https://github.com/coin-or-tools/Data-Sample.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coin_data_sample-1.2.11_1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "cfa1b657c1df3a7767987455b353f22ffe1ac38f42901cb7c33afb2c0525c281"
-    sha256 cellar: :any_skip_relocation, catalina:     "a4292a0a2011478ef75e575cb0ea587c0af3327b1e36b01d5fe3a1b298c3638a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3efa8d13b5630f9ad14b38b9caef27f30ab59502921c57941a47876d54e098a0"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coin_data_sample-1.2.12"
+    sha256 cellar: :any_skip_relocation, big_sur:      "26c9b55072710e84714f0af050cec53e863f3b8cfed67ed2233b2630c8998fab"
+    sha256 cellar: :any_skip_relocation, catalina:     "eef9ed62cea280a7ae01ad6439f262e06295223239d040a5e3a99f453f9b51a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "bdda762446f81a97fd5cac3b48d234cfbaddc510560ea784335ef0d626fe1b73"
   end
 
   def install
