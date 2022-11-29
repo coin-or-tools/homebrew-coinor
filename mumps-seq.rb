@@ -1,8 +1,9 @@
 class MumpsSeq < Formula
   desc "Sequential Sparse Direct Solver"
   homepage "http://mumps-solver.org"
-  url "http://mumps.enseeiht.fr/MUMPS_5.4.1.tar.gz"
-  sha256 "93034a1a9fe0876307136dcde7e98e9086e199de76f1c47da822e7d4de987fa8"
+  url "https://graal.ens-lyon.fr/MUMPS/MUMPS_5.5.1.tar.gz"
+  mirror "http://mumps.enseeiht.fr/MUMPS_5.5.1.tar.gz"
+  sha256 "1abff294fa47ee4cfd50dfd5c595942b72ebfcedce08142a75a99ab35014fa15"
 
   bottle do
     root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/mumps-seq-5.4.1"
