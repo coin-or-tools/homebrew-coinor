@@ -6,10 +6,11 @@ class MumpsSeq < Formula
   sha256 "1abff294fa47ee4cfd50dfd5c595942b72ebfcedce08142a75a99ab35014fa15"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/mumps-seq-5.4.1"
-    sha256 cellar: :any,                 big_sur:      "a1e71aad84f101766f17108c643b0d7757c92227a2da2f4d28cba3ffe1693a47"
-    sha256 cellar: :any,                 catalina:     "c64fdabb2abc4e98c0a0cedb3ffc0104e116ba9ce978005d8e4a60a7fdc71691"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dbdeabc21c642e8e601db0398d6287e226d4f2784581295da963b3f31dfe1caa"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/mumps-seq-5.5.1"
+    sha256 cellar: :any,                 monterey:     "0c262d274ac247ea643f4744957d0faa58c2a52d277fc40579e3baa40a936c2d"
+    sha256 cellar: :any,                 big_sur:      "8f49ff5dbb6ff3122100ef553ef9a4d1121e45512a4b46265cc482f2d99df4d9"
+    sha256 cellar: :any,                 catalina:     "d2aae77254f8323864edc310cff09faa43368e88bb018b0b3d9c8100fb120587"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "f7e5be60d9eb35028e0e168046cec8a89a26d9e7c5bb051ab381aa0d6198dae5"
   end
 
   keg_only "conflicts with parallel builds of MUMPS"
