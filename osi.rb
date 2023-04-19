@@ -1,8 +1,8 @@
 class Osi < Formula
   desc "Abstract class to generic LP solver, derived classes for specific solvers"
   homepage "https://github.com/coin-or/Osi"
-  url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.7.tar.gz"
-  sha256 "f1bc53a498585f508d3f8d74792440a30a83c8bc934d0c8ecf8cd8bc0e486228"
+  url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.8.tar.gz"
+  sha256 "8b01a49190cb260d4ce95aa7e3948a56c0917b106f138ec0a8544fadca71cf6a"
   revision 1
 
   head "https://github.com/coin-or/Osi.git"
