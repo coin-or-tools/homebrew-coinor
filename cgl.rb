@@ -3,7 +3,7 @@ class Cgl < Formula
   homepage "https://github.com/coin-or/Cgl"
   url "https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.5.tar.gz"
   sha256 "93b30a80b5d2880c2e72d5877c64bdeaf4d7c1928b3194ea2f88b1aa4517fb1b"
-  revision 1
+  revision 0
 
   head "https://github.com/coin-or/Cgl.git"
 
