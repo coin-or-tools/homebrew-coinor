@@ -1,8 +1,8 @@
 class Symphony < Formula
   desc "Framework for solving mixed integer linear programs"
   homepage "https://github.com/coin-or/SYMPHONY"
-  url "https://github.com/coin-or/SYMPHONY/archive/refs/tags/releases/5.6.18.tar.gz"
-  sha256 "f566e2986c6b4269a5a128cea13622d3d90b046b7a9151ebd89f27c495f183a0"
+  url "https://github.com/coin-or/SYMPHONY/archive/refs/tags/releases/5.7.0.tar.gz"
+  sha256 "090616c2fc43ab83b6e980550a5b3f5dd87143fa9583c327c3e6712483eea18c"
 
   head "https://github.com/coin-or/SYMPHONY"
 
@@ -29,10 +29,10 @@ class Symphony < Formula
             "--datadir=#{pkgshare}",
             "--includedir=#{include}/symphony",
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
-            "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
             "--enable-gnu-packages",
-            "--with-application"]
+            "--with-application",
+            "--without-netlib"]
 
     ENV.append "CXXFLAGS", "-I#{Formula["readline"].opt_include}"
     ENV.append "LDFLAGS",  "-L#{Formula["readline"].opt_lib} -lreadline"
