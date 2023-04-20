@@ -29,10 +29,10 @@ class Symphony < Formula
             "--datadir=#{pkgshare}",
             "--includedir=#{include}/symphony",
             "--with-sample-datadir=#{Formula["coin_data_sample"].opt_pkgshare}/coin/Data/Sample",
-            "--with-netlib-datadir=#{Formula["coin_data_netlib"].opt_pkgshare}/coin/Data/Netlib",
             "--with-dot",
             "--enable-gnu-packages",
-            "--with-application"]
+            "--with-application",
+            "--without-netlib"]
 
     ENV.append "CXXFLAGS", "-I#{Formula["readline"].opt_include}"
     ENV.append "LDFLAGS",  "-L#{Formula["readline"].opt_lib} -lreadline"
