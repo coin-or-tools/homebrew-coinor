@@ -2,7 +2,7 @@ class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
   homepage "https://github.com/coin-or/CoinUtils"
   url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.6.tar.gz"
-  sha256 "6ea31d5214f7eb27fa3ffb2bdad7ec96499dd2aaaeb4a7d0abd90ef852fc79ca"
+  sha256 "27da344479f38c82112d738501643dcb229e4ee96a5f87d4f406456bdc1b2cb4"
   revision 1
 
   head "https://github.com/coin-or/CoinUtils.git"
