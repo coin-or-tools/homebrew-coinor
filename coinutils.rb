@@ -3,7 +3,6 @@ class Coinutils < Formula
   homepage "https://github.com/coin-or/CoinUtils"
   url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.11.tar.gz"
   sha256 "27da344479f38c82112d738501643dcb229e4ee96a5f87d4f406456bdc1b2cb4"
-  revision 1
 
   head "https://github.com/coin-or/CoinUtils.git"
 
