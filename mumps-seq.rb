@@ -61,7 +61,7 @@ class MumpsSeq < Formula
     # make shared lib
     so = OS.mac? ? "dylib" : "so"
     all_load = OS.mac? ? "-all_load" : "--whole-archive"
-    noall_load = OS.mac? ? "-noall_load" : "--no-whole-archive"
+    noall_load = OS.mac? ? "" : "--no-whole-archive"
     shopts = OS.mac? ? ["-undefined", "dynamic_lookup"] : []
     install_name = ->(libname) { OS.mac? ? ["-Wl,-install_name", "-Wl,#{lib}/#{libname}.#{so}"] : [] }
     cd "lib" do
