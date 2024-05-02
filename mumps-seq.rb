@@ -4,7 +4,6 @@ class MumpsSeq < Formula
   url "https://graal.ens-lyon.fr/MUMPS/MUMPS_5.5.1.tar.gz"
   mirror "http://mumps.enseeiht.fr/MUMPS_5.5.1.tar.gz"
   sha256 "1abff294fa47ee4cfd50dfd5c595942b72ebfcedce08142a75a99ab35014fa15"
-  revision 1
 
   bottle do
     root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/mumps-seq-5.5.1"
@@ -62,7 +61,7 @@ class MumpsSeq < Formula
     # make shared lib
     so = OS.mac? ? "dylib" : "so"
     all_load = OS.mac? ? "-all_load" : "--whole-archive"
-    noall_load = OS.mac? ? "" : "--no-whole-archive"
+    noall_load = OS.mac? ? "-noall_load" : "--no-whole-archive"
     shopts = OS.mac? ? ["-undefined", "dynamic_lookup"] : []
     install_name = ->(libname) { OS.mac? ? ["-Wl,-install_name", "-Wl,#{lib}/#{libname}.#{so}"] : [] }
     cd "lib" do
