@@ -43,9 +43,6 @@ class Symphony < Formula
     args << "--with-clp-lib=-L#{Formula["coin-or-tools/coinor/clp"].opt_lib} -lClp -lOsiClp"
     args << "--with-clp-incdir=#{Formula["coin-or-tools/coinor/clp"].opt_include}/clp/coin"
 
-    args << "--with-dylp-lib=-L#{Formula["coin-or-tools/coinor/dylp"].opt_lib} -lDylp"
-    args << "--with-dylp-incdir=#{Formula["coin-or-tools/coinor/dylp"].opt_include}/dylp/coin"
-
     args << "--with-glpk-lib=-L#{Formula["coin-or-tools/coinor/glpk@448"].opt_lib} -lglpk"
     args << "--with-glpk-incdir=#{Formula["coin-or-tools/coinor/glpk@448"].opt_include}"
     args << "--with-gmpl"
