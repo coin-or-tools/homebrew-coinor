@@ -17,7 +17,7 @@ class Clp < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "ampl-mp"
+  depends_on "ampl-mp@3.1.0"
   depends_on "coin-or-tools/coinor/coinutils"
   depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "coin-or-tools/coinor/mumps-seq"
@@ -49,8 +49,8 @@ class Clp < Formula
     args << "--with-glpk-lib=-L#{Formula["coin-or-tools/coinor/glpk@448"].opt_lib} -lglpk"
     args << "--with-glpk-incdir=#{Formula["coin-or-tools/coinor/glpk@448"].opt_include}"
 
-    args << "--with-asl-incdir=#{Formula["ampl-mp"].opt_include}/asl"
-    args << "--with-asl-lib=-L#{Formula["ampl-mp"].opt_lib} -lasl"
+    args << "--with-asl-incdir=#{Formula["ampl-mp@3.1.0"].opt_include}/asl"
+    args << "--with-asl-lib=-L#{Formula["ampl-mp@3.1.0"].opt_lib} -lasl"
 
     mumps_libs = %w[-ldmumps -lmumps_common -lpord -lmpiseq]
     mumps_libcmd = "-L#{Formula["coin-or-tools/coinor/mumps-seq"].opt_lib} " + mumps_libs.join(" ")
