@@ -14,7 +14,7 @@ class AmplMpAT310 < Formula
   depends_on "gcc@9"
 
   patch :DATA
-  
+
   def install
     args = %W[
       -DAMPL_LIBRARY_DIR=#{libexec}/bin
@@ -40,7 +40,7 @@ class AmplMpAT310 < Formula
           return 0;
       }
     C
-    
+
     system ENV.cc, "test.c", "-I#{include}/mp", "-L#{lib}", "-lmp", "-o", "test"
     system "./test"
   end
