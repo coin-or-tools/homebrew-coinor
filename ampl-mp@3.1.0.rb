@@ -60,4 +60,3 @@ class AmplMpAT310 < Formula
     assert_match "Objective name: objective", output
   end
 end
-
