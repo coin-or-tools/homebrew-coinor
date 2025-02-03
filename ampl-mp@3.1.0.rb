@@ -44,6 +44,7 @@ class AmplMpAT310 < Formula
       -DBUILD_SHARED_LIBS=ON
       -DBUILD_TESTS=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: libexec/"bin")}
+      -DCMAKE_DISABLE_FIND_PACKAGE_ODBC=TRUE
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
