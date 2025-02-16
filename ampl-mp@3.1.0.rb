@@ -5,11 +5,6 @@ class AmplMpAT310 < Formula
   sha256 "587c1a88f4c8f57bef95b58a8586956145417c8039f59b1758365ccc5a309ae9"
   license "MIT"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "cmake" => :build
 
   resource "miniampl" do
