@@ -18,7 +18,7 @@ class Cbc < Formula
 
   depends_on "pkg-config" => :build
 
-  depends_on "ampl-mp"
+  depends_on "ampl-mp@3.1.0"
   depends_on "coin-or-tools/coinor/cgl"
   depends_on "coin-or-tools/coinor/clp"
   depends_on "coin-or-tools/coinor/glpk@448"
