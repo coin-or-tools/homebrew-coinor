@@ -5,6 +5,13 @@ class AmplMpAT310 < Formula
   sha256 "587c1a88f4c8f57bef95b58a8586956145417c8039f59b1758365ccc5a309ae9"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/ampl-mp@3.1.0-3.1.0"
+    sha256 cellar: :any,                 arm64_sonoma: "d448ee4945a4943bd730587813f9b7d5ea159ac5adbc3240e8488d4a855b9857"
+    sha256 cellar: :any,                 ventura:      "f7cef5bef73b70be543d0baad162b2b382d9a703b3baae082f49e255424797a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e92408864d3721101f8cafe1e6afb29046ebd479b87137714692879090309aa4"
+  end
+
   depends_on "cmake" => :build
 
   resource "miniampl" do
