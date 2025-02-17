@@ -3,7 +3,7 @@ class Symphony < Formula
   homepage "https://github.com/coin-or/SYMPHONY"
   url "https://github.com/coin-or/SYMPHONY/archive/refs/tags/releases/5.6.18.tar.gz"
   sha256 "f566e2986c6b4269a5a128cea13622d3d90b046b7a9151ebd89f27c495f183a0"
-  revision 1
+  revision 2
 
   head "https://github.com/coin-or/SYMPHONY"
 
