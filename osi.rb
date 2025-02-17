@@ -8,8 +8,8 @@ class Osi < Formula
   head "https://github.com/coin-or/Osi.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/osi-0.108.10"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b5b9cc1463d6ec5ecad3d811901f7786ac2fab12feb3aa630497cdc9faf0de81"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/osi-0.108.10_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "184072ed7d5a45cd2c42e2ec5ad69151c815fd671031cdd7ca84c62d2289eda1"
   end
 
   keg_only "conflicts with formula in core"
