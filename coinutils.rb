@@ -8,8 +8,8 @@ class Coinutils < Formula
   head "https://github.com/coin-or/CoinUtils.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coinutils-2.11.11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c5c9e6bafc97f3c541ea9838954f311d6bd7224aafa655e7d63b54672356f60c"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coinutils-2.11.11_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "efdfa0d4e0d2b1cb2b0940d90e33ac10ad18010cf0f91f968e207941fa890502"
   end
 
   keg_only "conflicts with formula in core"
