@@ -8,10 +8,8 @@ class Symphony < Formula
   head "https://github.com/coin-or/SYMPHONY"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/symphony-5.6.18"
-    sha256 cellar: :any,                 big_sur:      "649af28bff2e2ef1e1736e0a8933bbdb809f2037826e9676aa26dcb653be296e"
-    sha256 cellar: :any,                 catalina:     "13cf723e769a58337b113e452981ea47027298a3d869e63e557774d4ebd6949c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "eaf881a77a0e000107d05a3a8b53ac725ba3e6dbe921c88319eae7c8fbb061ce"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/symphony-5.6.18_2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "23a6d7668aa24022003a4f67d797816ab3e8841c0665ac06f9e98afdb9987e33"
   end
 
   depends_on "pkg-config" => :build
