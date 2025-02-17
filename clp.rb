@@ -26,7 +26,7 @@ class Clp < Formula
   depends_on "gcc"
   depends_on "readline"
   depends_on "zlib"
-  depends_on "openblas" => :recommended
+  depends_on "openblas"
   depends_on "suite-sparse" => :optional
 
   def install

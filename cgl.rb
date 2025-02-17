@@ -18,7 +18,15 @@ class Cgl < Formula
 
   depends_on "pkg-config" => :build
 
+  depends_on "ampl-mp@3.1.0"
+  depends_on "bzip2"
   depends_on "coin-or-tools/coinor/clp"
+  depends_on "coin-or-tools/coinor/coinutils"
+  depends_on "coin-or-tools/coinor/glpk@448"
+  depends_on "coin-or-tools/coinor/mumps-seq"
+  depends_on "coin-or-tools/coinor/osi"
+  depends_on "zlib"
+  depends_on "openblas"
 
   def install
     args = ["--disable-debug",
