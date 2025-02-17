@@ -8,10 +8,8 @@ class Clp < Formula
   head "https://github.com/coin-or/Clp.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/clp-1.17.7"
-    sha256 cellar: :any,                 big_sur:      "10c8837f4e1456327943c7742e9e5674548aa9676e4131aeb4abf34714cf78f6"
-    sha256 cellar: :any,                 catalina:     "809c3db66d9868f67d9b3b85fde06681315cef63337c48dbff0a1cca77a4d879"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b23c8e42f8c654ebdf2db051c63bdac3fd418dcd6e1f504063e344983e38cbc2"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/clp-1.17.7_1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "24529955548a3bf2f24028fbb546e4605288ebb8abd3c18b37babf5e5fc7ea0b"
   end
 
   keg_only "conflicts with formula in core"
