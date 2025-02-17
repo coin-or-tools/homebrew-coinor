@@ -39,8 +39,8 @@ class Cbc < Formula
     args << "--with-glpk-lib=-L#{Formula["coin-or-tools/coinor/glpk@448"].opt_lib} -lglpk"
     args << "--with-glpk-incdir=#{Formula["coin-or-tools/coinor/glpk@448"].opt_include}"
 
-    args << "--with-asl-incdir=#{Formula["ampl-mp"].opt_include}/asl"
-    args << "--with-asl-lib=-L#{Formula["ampl-mp"].opt_lib} -lasl"
+    args << "--with-asl-incdir=#{Formula["ampl-mp@3.1.0"].opt_include}/asl"
+    args << "--with-asl-lib=-L#{Formula["ampl-mp@3.1.0"].opt_lib} -lasl"
 
     system "./configure", *args
 
