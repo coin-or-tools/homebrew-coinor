@@ -17,7 +17,9 @@ class Symphony < Formula
 
   depends_on "coin-or-tools/coinor/cgl"
   depends_on "coin-or-tools/coinor/clp"
+  depends_on "coin-or-tools/coinor/coinutils"
   depends_on "coin-or-tools/coinor/glpk@448"
+  depends_on "coin-or-tools/coinor/osi"
   depends_on "gcc"
   depends_on "readline"
 
