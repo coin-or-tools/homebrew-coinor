@@ -22,8 +22,8 @@ class Coinutils < Formula
   depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "doxygen"
   depends_on "gcc"
-  depends_on "zlib"
   depends_on "openblas"
+  depends_on "zlib"
 
   def install
     args = ["--disable-debug",

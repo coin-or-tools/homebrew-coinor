@@ -25,8 +25,8 @@ class Cgl < Formula
   depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "coin-or-tools/coinor/mumps-seq"
   depends_on "coin-or-tools/coinor/osi"
-  depends_on "zlib"
   depends_on "openblas"
+  depends_on "zlib"
 
   def install
     args = ["--disable-debug",

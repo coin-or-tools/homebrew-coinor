@@ -25,8 +25,8 @@ class Clp < Formula
   depends_on "coin-or-tools/coinor/osi"
   depends_on "gcc"
   depends_on "readline"
-  depends_on "zlib"
   depends_on "openblas"
+  depends_on "zlib"
   depends_on "suite-sparse" => :optional
 
   def install

@@ -27,8 +27,8 @@ class Cbc < Formula
   depends_on "coin-or-tools/coinor/mumps-seq"
   depends_on "coin-or-tools/coinor/osi"
   depends_on "gcc"
-  depends_on "zlib"
   depends_on "openblas"
+  depends_on "zlib"
 
   def install
     args = ["--disable-debug",
