@@ -3,7 +3,8 @@ class Clp < Formula
   homepage "https://github.com/coin-or/Clp"
   url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.7.tar.gz"
   sha256 "c4c2c0e014220ce8b6294f3be0f3a595a37bef58a14bf9bac406016e9e73b0f5"
-
+  revision 1
+  
   head "https://github.com/coin-or/Clp.git"
 
   bottle do

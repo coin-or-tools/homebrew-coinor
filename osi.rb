@@ -3,7 +3,8 @@ class Osi < Formula
   homepage "https://github.com/coin-or/Osi"
   url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.10.tar.gz"
   sha256 "614c2b329caf57c00326412266299fdfd93c5691492034fbb46990b5e71cc5a7"
-
+  revision 1
+  
   head "https://github.com/coin-or/Osi.git"
 
   bottle do
