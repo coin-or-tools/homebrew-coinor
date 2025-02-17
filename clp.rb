@@ -18,6 +18,9 @@ class Clp < Formula
   depends_on "pkg-config" => :build
 
   depends_on "ampl-mp@3.1.0"
+  depends_on "openblas"
+  depends_on "bzip2"
+  depends_on "zlib"
   depends_on "coin-or-tools/coinor/coinutils"
   depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "coin-or-tools/coinor/mumps-seq"
