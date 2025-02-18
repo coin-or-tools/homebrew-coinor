@@ -6,6 +6,11 @@ class Symphony < Formula
 
   head "https://github.com/coin-or/SYMPHONY"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/symphony-5.7.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fa6c70528fb7e19fdcd7dc1696079348dbe7497bfb1b78894305f4c11940b6cd"
+  end
+
   depends_on "pkg-config" => :build
 
   depends_on "coin-or-tools/coinor/cgl"
