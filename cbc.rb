@@ -1,16 +1,10 @@
 class Cbc < Formula
   desc "Mixed integer linear programming solver"
   homepage "https://github.com/coin-or/Cbc"
-  url "https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.7.tar.gz"
-  sha256 "5aa5490e2bc39c3c03f3636c9bca459cb3f8f365e0280fd0c4759ce3119e5b19"
-  revision 2
+  url "https://github.com/coin-or/Cbc/archive/refs/tags/releases/2.10.12.tar.gz"
+  sha256 "9ed71e4b61668462fc3794c102e26b4bb01a047efbbbcbd69ae7bde1f04f46a8"
 
   head "https://github.com/coin-or/Cbc.git"
-
-  bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cbc-2.10.7_2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d63e3c76714ebe7781d249155cf0ffba6a7332d62b740ed9bbf751e642085710"
-  end
 
   keg_only "conflicts with formula in core"
 

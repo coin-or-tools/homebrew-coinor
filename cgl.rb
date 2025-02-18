@@ -1,16 +1,10 @@
 class Cgl < Formula
   desc "Cut-generation library"
   homepage "https://github.com/coin-or/Cgl"
-  url "https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.5.tar.gz"
-  sha256 "5a2e7ca380425b3d7279d0759c625a367d06ec8293698b59f82fae38ae5df64e"
-  revision 2
+  url "https://github.com/coin-or/Cgl/archive/refs/tags/releases/0.60.9.tar.gz"
+  sha256 "558421ccd6aa91d6922dd1baa04e37aa4c75ba0472118dc11779e5d6a19bfb38"
 
   head "https://github.com/coin-or/Cgl.git"
-
-  bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cgl-0.60.5_2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5f3212abd604cc4378c2c4dd136835d58ea4778adfe89ea75351f691ae1ffa10"
-  end
 
   keg_only "conflicts with formula in core"
 

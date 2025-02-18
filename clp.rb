@@ -1,16 +1,10 @@
 class Clp < Formula
   desc "Linear programming solver"
   homepage "https://github.com/coin-or/Clp"
-  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.7.tar.gz"
-  sha256 "c4c2c0e014220ce8b6294f3be0f3a595a37bef58a14bf9bac406016e9e73b0f5"
-  revision 1
+  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.10.tar.gz"
+  sha256 "0d79ece896cdaa4a3855c37f1c28e6c26285f74d45f635046ca0b6d68a509885"
 
   head "https://github.com/coin-or/Clp.git"
-
-  bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/clp-1.17.7_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "24529955548a3bf2f24028fbb546e4605288ebb8abd3c18b37babf5e5fc7ea0b"
-  end
 
   keg_only "conflicts with formula in core"
 

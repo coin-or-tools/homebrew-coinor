@@ -1,16 +1,10 @@
 class Osi < Formula
   desc "Abstract class to generic LP solver, derived classes for specific solvers"
   homepage "https://github.com/coin-or/Osi"
-  url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.10.tar.gz"
-  sha256 "614c2b329caf57c00326412266299fdfd93c5691492034fbb46990b5e71cc5a7"
-  revision 1
+  url "https://github.com/coin-or/Osi/archive/refs/tags/releases/0.108.11.tar.gz"
+  sha256 "1063b6a057e80222e2ede3ef0c73c0c54697e0fee1d913e2bef530310c13a670"
 
   head "https://github.com/coin-or/Osi.git"
-
-  bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/osi-0.108.10_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "184072ed7d5a45cd2c42e2ec5ad69151c815fd671031cdd7ca84c62d2289eda1"
-  end
 
   keg_only "conflicts with formula in core"
 
