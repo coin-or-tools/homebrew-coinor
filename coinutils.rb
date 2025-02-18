@@ -6,6 +6,11 @@ class Coinutils < Formula
 
   head "https://github.com/coin-or/CoinUtils.git"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coinutils-2.11.12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b0039fd3edaa73a0c0dbee4ca2032c3c6d27d0cbab4a03739294dc80e3edb3ca"
+  end
+
   keg_only "conflicts with formula in core"
 
   depends_on "graphviz" => :build # For documentation.
