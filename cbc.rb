@@ -6,6 +6,11 @@ class Cbc < Formula
 
   head "https://github.com/coin-or/Cbc.git"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cbc-2.10.12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "d4832af4b6870322b17589c1c9c7047690738cf0a0647927eb99ed496d21a894"
+  end
+
   keg_only "conflicts with formula in core"
 
   depends_on "pkg-config" => :build
