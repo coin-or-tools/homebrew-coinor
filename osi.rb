@@ -6,6 +6,11 @@ class Osi < Formula
 
   head "https://github.com/coin-or/Osi.git"
 
+  bottle do
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/osi-0.108.11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01fed4631dee3e0d832d47f12b2fef5968c3d6f71ff286b5e867486b45baab39"
+  end
+
   keg_only "conflicts with formula in core"
 
   depends_on "pkg-config" => :build
