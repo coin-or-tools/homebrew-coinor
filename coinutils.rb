@@ -1,16 +1,10 @@
 class Coinutils < Formula
   desc "Utilities used by other Coin-OR projects"
   homepage "https://github.com/coin-or/CoinUtils"
-  url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.11.tar.gz"
-  sha256 "27da344479f38c82112d738501643dcb229e4ee96a5f87d4f406456bdc1b2cb4"
-  revision 1
+  url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.12.tar.gz"
+  sha256 "eef1785d78639b228ae2de26b334129fe6a7d399c4ac6f8fc5bb9054ba00de64"
 
   head "https://github.com/coin-or/CoinUtils.git"
-
-  bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coinutils-2.11.11_1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "efdfa0d4e0d2b1cb2b0940d90e33ac10ad18010cf0f91f968e207941fa890502"
-  end
 
   keg_only "conflicts with formula in core"
 
