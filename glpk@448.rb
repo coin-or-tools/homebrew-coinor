@@ -1,8 +1,7 @@
 class GlpkAT448 < Formula
   desc "Library for Linear Programming"
   homepage "https://www.gnu.org/software/glpk"
-  url "https://ftp.gnu.org/gnu/glpk/glpk-4.48.tar.gz"
-  mirror "https://ftpmirror.gnu.org/glpk/glpk-4.48.tar.gz"
+  url "https://ftpmirror.gnu.org/gnu/glpk/glpk-4.48.tar.gz"
   sha256 "abc2c8f895b20a91cdfcfc04367a0bc8677daf8b4ec3f3e86c5b71c79ac6adb1"
   revision 1
 
