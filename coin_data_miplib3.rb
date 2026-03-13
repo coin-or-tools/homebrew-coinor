@@ -1,8 +1,8 @@
 class CoinDataMiplib3 < Formula
   desc "MIPLib models"
   homepage "https://github.com/coin-or-tools/Data-miplib3"
-  url "https://github.com/coin-or-tools/Data-miplib3/archive/refs/tags/releases/1.2.8.tar.gz"
-  sha256 "f7899e59bff4c597d91a24c7462d473358cd37b2877dc040eccd390b56933f9c"
+  url "https://github.com/coin-or-tools/Data-miplib3/archive/refs/tags/releases/1.2.9.tar.gz"
+  sha256 "4e4aa82d70989b115542c8394384e5e43a16db0550df472fed8fb0d67111e5ec"
 
   head "https://github.com/coin-or-tools/Data-miplib3.git"
 
