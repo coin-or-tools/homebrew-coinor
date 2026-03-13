@@ -24,6 +24,7 @@ class Coinutils < Formula
   depends_on "gcc"
   depends_on "openblas"
   depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     args = ["--disable-debug",
