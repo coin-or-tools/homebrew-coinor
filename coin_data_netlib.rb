@@ -3,6 +3,7 @@ class CoinDataNetlib < Formula
   homepage "https://github.com/coin-or-tools/Data-Netlib"
   url "https://github.com/coin-or-tools/Data-Netlib/archive/refs/tags/releases/1.2.10.tar.gz"
   sha256 "a1526411fe0bd9e83e1f9df5b68f17f45e7138b0327c7786d3cc2b578a738074"
+  revision 1
 
   head "https://github.com/coin-or-tools/Data-Netlib.git"
 
