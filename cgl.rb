@@ -24,6 +24,7 @@ class Cgl < Formula
   depends_on "coin-or-tools/coinor/osi"
   depends_on "openblas"
   depends_on "zlib"
+  depends_on "zlib-ng-compat"
 
   def install
     args = ["--disable-debug",

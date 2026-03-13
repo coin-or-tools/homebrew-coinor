@@ -18,6 +18,8 @@ class Osi < Formula
   depends_on "coin-or-tools/coinor/coinutils"
   depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "openblas" => :recommended
+  depends_on "bzip2"
+  depends_on "zlib-ng-compat"
 
   def install
     args = ["--disable-debug",
