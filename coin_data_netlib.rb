@@ -1,8 +1,8 @@
 class CoinDataNetlib < Formula
   desc "Netlib LP models"
   homepage "https://github.com/coin-or-tools/Data-Netlib"
-  url "https://github.com/coin-or-tools/Data-Netlib/archive/refs/tags/releases/1.2.10.tar.gz"
-  sha256 "a1526411fe0bd9e83e1f9df5b68f17f45e7138b0327c7786d3cc2b578a738074"
+  url "https://github.com/coin-or-tools/Data-Netlib/archive/refs/tags/releases/1.2.11.tar.gz"
+  sha256 "68876fbd33f0f99d4ccf1f02fe203947fe758a42eac5d5e795e2fca051735791"
 
   head "https://github.com/coin-or-tools/Data-Netlib.git"
 

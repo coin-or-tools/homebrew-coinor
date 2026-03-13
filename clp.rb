@@ -1,8 +1,8 @@
 class Clp < Formula
   desc "Linear programming solver"
   homepage "https://github.com/coin-or/Clp"
-  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.10.tar.gz"
-  sha256 "0d79ece896cdaa4a3855c37f1c28e6c26285f74d45f635046ca0b6d68a509885"
+  url "https://github.com/coin-or/Clp/archive/refs/tags/releases/1.17.11.tar.gz"
+  sha256 "2c078e174dc1a7a308e091b6256fb34b4017897fc140ea707ba207b2913ea46d"
 
   head "https://github.com/coin-or/Clp.git"
 
@@ -25,6 +25,7 @@ class Clp < Formula
   depends_on "openblas"
   depends_on "readline"
   depends_on "zlib"
+  depends_on "zlib-ng-compat"
   depends_on "suite-sparse" => :optional
 
   def install

@@ -3,6 +3,7 @@ class CoinDataStochastic < Formula
   homepage "https://github.com/coin-or-tools/Data-Stochastic"
   url "https://github.com/coin-or-tools/Data-Stochastic/archive/refs/tags/releases/1.1.7.tar.gz"
   sha256 "de65ca248c23dcdfc13d0212f903de034f48c9d7c22ee249ce65afc8372fd9cb"
+  revision 1
 
   head "https://github.com/coin-or-tools/Data-Stochastic.git"
 

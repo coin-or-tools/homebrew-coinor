@@ -66,25 +66,25 @@ class MumpsSeq < Formula
     install_name = ->(libname) { OS.mac? ? ["-Wl,-install_name", "-Wl,#{lib}/#{libname}.#{so}"] : [] }
     cd "lib" do
       libpord_install_name = install_name.call("libpord")
-      system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "libpord.a", *lib_args, \
+      system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "libpord.a", *lib_args,
              "-Wl,#{noall_load}", *libpord_install_name, *shopts, "-o", "libpord.#{so}"
       lib.install "libpord.#{so}"
       libmumps_common_install_name = install_name.call("libmumps_common")
-      system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "libmumps_common.a", *lib_args, \
-             "-L#{lib}", "-lpord", "-Wl,#{noall_load}", *libmumps_common_install_name, \
+      system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "libmumps_common.a", *lib_args,
+             "-L#{lib}", "-lpord", "-Wl,#{noall_load}", *libmumps_common_install_name,
              *shopts, "-o", "libmumps_common.#{so}"
       lib.install "libmumps_common.#{so}"
       %w[libsmumps libdmumps libcmumps libzmumps].each do |l|
         libinstall_name = install_name.call(l)
-        system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "#{l}.a", *lib_args, \
-               "-L#{lib}", "-lpord", "-lmumps_common", "-Wl,#{noall_load}", *libinstall_name, \
+        system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "#{l}.a", *lib_args,
+               "-L#{lib}", "-lpord", "-lmumps_common", "-Wl,#{noall_load}", *libinstall_name,
                *shopts, "-o", "#{l}.#{so}"
         lib.install "#{l}.#{so}"
       end
     end
     cd "libseq" do
       libmpiseq_install_name = install_name.call("libmpiseq")
-      system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "libmpiseq.a", *lib_args, \
+      system "gfortran", "-fPIC", "-shared", "-Wl,#{all_load}", "libmpiseq.a", *lib_args,
              "-Wl,#{noall_load}", *libmpiseq_install_name, *shopts, "-o", "libmpiseq.#{so}"
       lib.install "libmpiseq.#{so}"
     end
