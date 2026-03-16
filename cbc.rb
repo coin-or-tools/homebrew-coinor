@@ -7,8 +7,9 @@ class Cbc < Formula
   head "https://github.com/coin-or/Cbc.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cbc-2.10.12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d4832af4b6870322b17589c1c9c7047690738cf0a0647927eb99ed496d21a894"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cbc-2.10.13"
+    sha256 cellar: :any,                 arm64_sonoma: "a3b28032303b1845e874737a230672f2dfa7edd742cf27b06bd0c8ce6819e216"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "635ca06bf1c43af9f7c906d7c11bb97fbd896733f6f3ef22e4873ff50b21344e"
   end
 
   keg_only "conflicts with formula in core"
