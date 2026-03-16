@@ -7,8 +7,9 @@ class Cgl < Formula
   head "https://github.com/coin-or/Cgl.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cgl-0.60.9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "a1b1789904d58aa065bb669e8daecfae9ba94e7b2499d7f4e97cec68bbf383ee"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/cgl-0.60.10"
+    sha256 cellar: :any,                 arm64_sonoma: "5e75f7757f2771040c325de0cea03d0150cc6b466348448a997e18095d1d9c76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8981d561bd07a5ddd06e1f20f3f37498d36cd5293022a36b4fa64a046a0b2553"
   end
 
   keg_only "conflicts with formula in core"
