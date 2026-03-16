@@ -8,9 +8,10 @@ class MumpsSeq < Formula
 
   bottle do
     root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/mumps-seq-5.5.1_1"
-    sha256 cellar: :any,                 arm64_sonoma: "a9f2c8660ad094f56d44bde66d9f6200a79354c521ebe8d2d14c1d21428d007a"
-    sha256 cellar: :any,                 ventura:      "37a08558c70b1458be6bcb41645bacd870aac2f00030b34f3fd33e4eeedf966f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b7cfca4980b2ff8deab1deb97f10f641724f1bad016a6950a7faaa159544cd81"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:  "0fbdfa95d94afa50b23fc4816fabb98821d4fb22b9c36db5a2a986997191b565"
+    sha256 cellar: :any,                 arm64_sonoma: "e468a195deee434803a2ef8781efa3ddb00b7222cc2a58a743af2ad492d4616b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c51abf7fd94aa58cbdfd5c210b3aa9203ca5d3b0ef9d6b7b5bb7fde0b25c8006"
   end
 
   keg_only "conflicts with parallel builds of MUMPS"
