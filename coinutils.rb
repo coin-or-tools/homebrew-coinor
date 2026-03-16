@@ -7,8 +7,10 @@ class Coinutils < Formula
   head "https://github.com/coin-or/CoinUtils.git"
 
   bottle do
-    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coinutils-2.11.12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b0039fd3edaa73a0c0dbee4ca2032c3c6d27d0cbab4a03739294dc80e3edb3ca"
+    root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/coinutils-2.11.13"
+    sha256 cellar: :any,                 arm64_tahoe:  "8eeb4bb5b32c8c260afac3164b27686948c0559020e293dbc624f42534c02dcf"
+    sha256 cellar: :any,                 arm64_sonoma: "92c4216e87a59720fea004ed6996d402fe3bd68cba78ec1816223e79f1d27934"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "acc4071c849d6928363ca6d8726484ac37e53f4acfba70018c34c1b1a911a245"
   end
 
   keg_only "conflicts with formula in core"
