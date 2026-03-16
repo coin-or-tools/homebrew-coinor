@@ -14,7 +14,12 @@ class Dylp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a74f36a134e76e42db9381a9a7403878d6788222f2372cfb60c76e8f4e151c26"
   end
 
+  depends_on "bzip2"
+  depends_on "coin-or-tools/coinor/coinutils"
+  depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "coin-or-tools/coinor/osi"
+  depends_on "openblas"
+  depends_on "zlib-ng-compat"
 
   def install
     args = ["--disable-debug",

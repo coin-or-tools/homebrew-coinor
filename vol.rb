@@ -15,7 +15,12 @@ class Vol < Formula
   end
 
   depends_on "coin_data_sample"
-  depends_on "coin-or-tools/coinor/osi" => :recommended
+  depends_on "bzip2"
+  depends_on "coin-or-tools/coinor/coinutils"
+  depends_on "coin-or-tools/coinor/glpk@448"
+  depends_on "coin-or-tools/coinor/osi"
+  depends_on "openblas"
+  depends_on "zlib-ng-compat"
 
   def install
     args = ["--disable-debug",
