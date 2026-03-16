@@ -9,9 +9,10 @@ class Vol < Formula
 
   bottle do
     root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/vol-1.5.4_1"
-    sha256 cellar: :any,                 big_sur:      "68a64053bafb6f61ac5746b48f3cee0c55cd9c7c2df6c495fbcee3e28fbe6b38"
-    sha256 cellar: :any,                 catalina:     "bf119993d785ed6ba7a0e751c0a88269900b25ea8c2b7798b85a35e8a8869030"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2943549f09c8b8c83bbfc8118cd46011f78a3518cfc32647ced86d2a3df1f72e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:  "55a0c20cb995b953318164438c42d480f0e1d0c155e6e29879e1c681b0e1b820"
+    sha256 cellar: :any,                 arm64_sonoma: "f2ed46c868db2c9022f0c555543e71ef8279a392ba202da130ecb61aa4bd530d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8b5c2d16658982a9a8bd5219b75db01262439d1c69cca12b1bcdaa11f5f59eba"
   end
 
   depends_on "bzip2"
