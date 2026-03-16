@@ -17,7 +17,7 @@ class MumpsSeq < Formula
 
   depends_on "gcc"
   depends_on "metis"
-  depends_on "openblas" => :recommended
+  depends_on "openblas"
 
   fails_with :clang # because we use OpenMP
 
