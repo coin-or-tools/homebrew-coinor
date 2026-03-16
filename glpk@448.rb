@@ -7,9 +7,11 @@ class GlpkAT448 < Formula
 
   bottle do
     root_url "https://github.com/coin-or-tools/homebrew-coinor/releases/download/glpk@448-4.48_1"
-    sha256 cellar: :any,                 big_sur:      "72b222ba9b1e53b7ed0914dec57a00891d0fb4451676ffb5c0a6e47d8f555e65"
-    sha256 cellar: :any,                 catalina:     "077f610efd8f7f4799deb232a8aafdc1c1435a4dac8811c0f96cac7d52beebfb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "cb43f08045e00eded38f00441c50cea26f234f08079c49e460c15e36c28e49c0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_tahoe:  "f48938dd76c736466cd5bb1cf7078ba80bd80f6a62c365cea831d8ebb47c72f8"
+    sha256 cellar: :any,                 arm64_sonoma: "575d752cc19ebfb8f3f8bc6c125d1f7316f6a33ef21306aa05ffd78c3ef37545"
+    sha256 cellar: :any,                 sequoia:      "2e0a9e0a6aca00be5534463122f89295294f1dc0b59e2c37875bd5a70b0f70fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "717470fbfb83eaf2f80d2373d23ebf934f1fc8e39f32a59ea56a99a3f1a5f5ab"
   end
 
   keg_only "this formula installs an older version of the GLPK libraries"
