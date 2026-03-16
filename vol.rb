@@ -14,11 +14,11 @@ class Vol < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "2943549f09c8b8c83bbfc8118cd46011f78a3518cfc32647ced86d2a3df1f72e"
   end
 
-  depends_on "coin_data_sample"
   depends_on "bzip2"
   depends_on "coin-or-tools/coinor/coinutils"
   depends_on "coin-or-tools/coinor/glpk@448"
   depends_on "coin-or-tools/coinor/osi"
+  depends_on "coin_data_sample"
   depends_on "openblas"
   depends_on "zlib-ng-compat"
 
