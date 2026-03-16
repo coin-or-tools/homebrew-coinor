@@ -4,7 +4,7 @@ class Coinutils < Formula
   url "https://github.com/coin-or/CoinUtils/archive/refs/tags/releases/2.11.13.tar.gz"
   sha256 "ddfea48e10209215748bc9f90a8c04abbb912b662c1aefaf280018d0a181ef79"
   revision 1
-  
+
   head "https://github.com/coin-or/CoinUtils.git"
 
   bottle do
